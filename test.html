@@ -3,138 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer Design</title>
+    <title>Bootstrap Vertical Tabs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        body {
+            background-color: #000;
+            color: white;
             font-family: Arial, sans-serif;
         }
-        
-        body {
-            background: #fff;
-        }
 
-        .footer {
-            padding: 50px 80px;
-            background: #f8f9fa;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            border-top: 2px solid #000;
-        }
-
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px 50px;
+        .tab-content {
+            background: #131313;
             padding: 20px;
-            border: 1px solid #000;
+            border-radius: 10px;
         }
 
-        .footer-links a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-            position: relative;
+        .nav-pills .nav-link {
+            color: white;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            border: 1px solid transparent;
+            margin-bottom: 10px;
+            transition: 0.3s ease-in-out;
         }
 
-        .footer-links a::after {
-            content: "";
-            position: absolute;
-            width: 50px;
-            height: 2px;
-            background: #000;
-            left: 0;
-            bottom: -3px;
+        .nav-pills .nav-link.active {
+            background: linear-gradient(135deg, #014d81, #026abf);
+            border-color: white;
+            color: white;
         }
 
-        .footer-logo {
-            font-size: 28px;
-            font-weight: bold;
-            margin-top: 20px;
+        .nav-pills .nav-link:hover {
+            border-color: white;
         }
 
-        .footer-company {
-            text-align: right;
-        }
-
-        .footer-company p {
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .social-buttons {
-            margin-top: 10px;
-        }
-
-        .social-buttons a {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            background: #000;
-            color: #fff;
-            text-align: center;
-            line-height: 30px;
-            border-radius: 50%;
-            margin: 5px;
-            text-decoration: none;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #555;
-            border-top: 1px solid #ccc;
-            margin-top: 20px;
-        }
-
-        .footer-bottom a {
-            color: #000;
-            text-decoration: none;
-            margin: 0 10px;
+        .fade {
+            transition: opacity 0.5s ease-in-out;
         }
     </style>
 </head>
 <body>
 
-    <footer>
-        <div class="footer">
-            <!-- Left Section (Links) -->
-            <div class="footer-links">
-                <a href="#">Products</a>
-                <a href="#">Careers</a>
-                <a href="#">News & Media</a>
-                <a href="#">Research & Publications</a>
-                <a href="#">About Us</a>
-                <a href="#">Contact Us</a>
+<div class="container my-5">
+    <h2 class="text-center mb-4">Discover our innovative technology</h2>
+    <div class="row">
+        <!-- Vertical Tabs -->
+        <div class="col-md-4">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active" id="one-tab" data-bs-toggle="pill" data-bs-target="#one" role="tab">ONE</button>
+                <button class="nav-link" id="next-tab" data-bs-toggle="pill" data-bs-target="#next" role="tab">NEXT</button>
+                <button class="nav-link" id="lens-tab" data-bs-toggle="pill" data-bs-target="#lens" role="tab">LENS</button>
+                <button class="nav-link" id="algos-tab" data-bs-toggle="pill" data-bs-target="#algos" role="tab">ALGOS</button>
             </div>
+        </div>
 
-            <!-- Middle Section (Logo) -->
-            <div class="footer-logo">
-                LOGO <br> <span style="font-size: 16px;">"TEMPUS"</span>
-            </div>
-
-            <!-- Right Section (Company Info & Social Media) -->
-            <div class="footer-company">
-                <p>Company Full Name</p>
-                <p>Company Full Address</p>
-                <div class="social-buttons">
-                    <a href="#">F</a>
-                    <a href="#">T</a>
-                    <a href="#">I</a>
-                    <a href="#">L</a>
+        <!-- Tab Content -->
+        <div class="col-md-8">
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="one" role="tabpanel">
+                    <h4>AI-enabled clinical assistant</h4>
+                    <p>Enhancing decision-making with advanced AI models.</p>
+                    <img src="your-image.jpg" class="img-fluid" alt="AI Assistant">
+                </div>
+                <div class="tab-pane fade" id="next" role="tabpanel">
+                    <h4>Identify and close gaps in care</h4>
+                    <p>Bridging the healthcare gap with smart insights.</p>
+                </div>
+                <div class="tab-pane fade" id="lens" role="tabpanel">
+                    <h4>Find, access, and analyze multimodal real-world data</h4>
+                    <p>Optimized data analysis for better decision-making.</p>
+                </div>
+                <div class="tab-pane fade" id="algos" role="tabpanel">
+                    <h4>Algorithmic models connected to our assays</h4>
+                    <p>Providing additional insights through AI-driven models.</p>
                 </div>
             </div>
         </div>
-
-        <!-- Bottom Copyright Section -->
-        <div class="footer-bottom">
-            All Content Copyright 2024 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
-        </div>
-    </footer>
+    </div>
+</div>
 
 </body>
 </html>
