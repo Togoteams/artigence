@@ -49,6 +49,48 @@
         animation: slideOut 0.4s ease-in-out forwards;
     }
 
+    .tab-button {
+      background: linear-gradient(to right, #1c1c1e, #2e2e2f);
+      border: none;
+      color: #fff;
+      text-align: left;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .tab-button.active,
+    .tab-button:hover {
+      background: linear-gradient(to right, #4c4c4f, #636366);
+    }
+
+    .tab-content img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .left-panel {
+      border-right: 1px solid #444;
+      padding-right: 2rem;
+    }
+
+    .right-panel {
+      padding-left: 2rem;
+    }
+
+    .sub-heading {
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    .main-title {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
     /* Keyframes for sliding in */
     @keyframes slideIn {
         from {
@@ -105,39 +147,45 @@
     <section class="lab_analysis">
         <h4 class="bottom-para">Empower Your Lab One Device, Infinite Microscopy Possibilities</h4>
         <div class="row">
-            <!-- Vertical Tabs -->
-            <div class="col-md-4">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <button class="nav-link active" id="one-tab" data-bs-toggle="pill" data-bs-target="#one" role="tab">ONE</button>
-                    <button class="nav-link" id="next-tab" data-bs-toggle="pill" data-bs-target="#next" role="tab">NEXT</button>
-                    <button class="nav-link" id="lens-tab" data-bs-toggle="pill" data-bs-target="#lens" role="tab">LENS</button>
-                    <button class="nav-link" id="algos-tab" data-bs-toggle="pill" data-bs-target="#algos" role="tab">ALGOS</button>
-                </div>
+            <!-- Sidebar Tabs -->
+            <div class="col-md-3 left-panel">
+              <button class="tab-button active" onclick="showTab('one')">
+                <div class="sub-heading">ONE</div>
+                <div class="main-title">AI-enabled clinical assistant</div>
+              </button>
+              <button class="tab-button" onclick="showTab('next')">
+                <div class="sub-heading">NEXT</div>
+                <div class="main-title">Identify and close gaps in care</div>
+              </button>
+              <button class="tab-button" onclick="showTab('lens')">
+                <div class="sub-heading">LENS</div>
+                <div class="main-title">Analyze real-world data</div>
+              </button>
+              <button class="tab-button" onclick="showTab('algos')">
+                <div class="sub-heading">ALGOS</div>
+                <div class="main-title">Algorithmic model insights</div>
+              </button>
+              <div class="mt-3">
+                <a href="#" class="text-white text-decoration-none">EXPLORE OUR TECH & AI &rarr;</a>
+              </div>
             </div>
-    
-            <!-- Tab Content -->
-            <div class="col-md-8">
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="one" role="tabpanel">
-                        <h4>AI-enabled clinical assistant</h4>
-                        <p>Enhancing decision-making with advanced AI models.</p>
-                        <img src="your-image.jpg" class="img-fluid" alt="AI Assistant">
-                    </div>
-                    <div class="tab-pane fade" id="next" role="tabpanel">
-                        <h4>Identify and close gaps in care</h4>
-                        <p>Bridging the healthcare gap with smart insights.</p>
-                    </div>
-                    <div class="tab-pane fade" id="lens" role="tabpanel">
-                        <h4>Find, access, and analyze multimodal real-world data</h4>
-                        <p>Optimized data analysis for better decision-making.</p>
-                    </div>
-                    <div class="tab-pane fade" id="algos" role="tabpanel">
-                        <h4>Algorithmic models connected to our assays</h4>
-                        <p>Providing additional insights through AI-driven models.</p>
-                    </div>
-                </div>
+      
+            <!-- Content Area -->
+            <div class="col-md-9 right-panel">
+              <div id="one" class="tab-content">
+                <img src="https://via.placeholder.com/800x450" alt="AI Assistant Image">
+              </div>
+              <div id="next" class="tab-content d-none">
+                <img src="https://via.placeholder.com/800x450?text=Gap+Care">
+              </div>
+              <div id="lens" class="tab-content d-none">
+                <img src="https://via.placeholder.com/800x450?text=Lens+Data">
+              </div>
+              <div id="algos" class="tab-content d-none">
+                <img src="https://via.placeholder.com/800x450?text=Algorithm+Insights">
+              </div>
             </div>
-        </div>
+          </div>
 
     </section>
 
@@ -255,52 +303,14 @@
         });
     </script>
 
-
-    <script>
-        const switchTab = (tabId, buttonClass) => {
-            const tabs = document.querySelectorAll(".blood_analysis_content");
-
-            // Find currently active tab
-            const activeTab = document.querySelector(".blood_analysis_content.active");
-
-            // If an active tab exists, animate it out before switching
-            if (activeTab) {
-                activeTab.classList.remove("active");
-                activeTab.classList.add("hide");
-
-                // Wait for the slide-out animation to complete before showing the next tab
-                setTimeout(() => {
-                    activeTab.style.display = "none"; // Hide after animation
-                    showNewTab(tabId);
-                }, 400); // Match animation duration
-            } else {
-                showNewTab(tabId);
-            }
-
-            // Remove active class from all buttons
-            document.querySelectorAll(".tab_button button").forEach((button) => {
-                button.classList.remove("active");
-            });
-
-            // Add active class to the clicked button
-            document.querySelector(`.${buttonClass}`).classList.add("active");
-        };
-
-        // Function to show the new tab with animation
-        const showNewTab = (tabId) => {
-            const newTab = document.getElementById(tabId);
-            newTab.style.display = "block"; // Show the new tab
-            newTab.classList.remove("hide"); // Remove any hide class
-            setTimeout(() => {
-                newTab.classList.add("active"); // Start slide-in animation
-            }, 50); // Small delay to trigger animation
-        };
-
-
-
-    </script>
-
-
+<script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('d-none'));
+      document.getElementById(tabId).classList.remove('d-none');
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+    }
+  </script>
 </body>
 
 </html>

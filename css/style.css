@@ -18,6 +18,7 @@
     --button-hover-color: #014d81;
     --primary-font-size: 16px;
     --primary-font-color: #ffffff;
+    --white-color: #ffffff;
     --theme-font-color: #3498db;
     --font-size: 16px;
   }
@@ -228,13 +229,71 @@ header {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
 }
 .our_partner .logo-grid img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: auto;
+}
+
+
+.our_partner {
+    overflow: hidden;
+    width: 100%;
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.logo-grid {
+    display: flex;
+    gap: 40px;
+    animation: scrollLogos 30s linear infinite;
+    padding: 20px 0;
+}
+
+.logo-item {
+    width: 180px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.logo-item img {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+/* Pause animation on hover */
+.scroll-container:hover .logo-grid {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 .solutions h2 {
@@ -346,8 +405,8 @@ header {
 .get_in_touch {
     color: #fff;
     padding: 90px 0px;
-    background: #003457;
-    background-image: url(../images/getintouch-bg.svg);
+    /* background: #003457;
+    background-image: url(../images/getintouch-bg.svg); */
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -360,6 +419,7 @@ header {
     font-weight: 500;
     line-height: 53.25px;
     text-align: left;
+    color:#0079ca ;
     text-transform: uppercase;
 }
 
@@ -402,6 +462,11 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.thin-strip {
+    height: 1px;
+    background: linear-gradient(to right, #ccc, #eee, #ccc);
+    opacity: 0.8;
+  }
 footer h5{
 color: #777;
 }
@@ -802,22 +867,7 @@ a.product_book_btn:hover {
 
 
 
-section.lab_analysis {
-    background: var(--primary-color);
-    text-align: center;
-}
 
-h4.bottom-para {
-    padding: 0px 223px;
-    margin-bottom: 48px;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 60px;
-    background: linear-gradient(93.8deg, #FFFFFF 25.75%, #6CC5FF 88.39%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: 'Poppins';
-}
 
 .tab_button button {
     color: white;
@@ -1230,7 +1280,7 @@ section.news_banner img {
   }
 /**Button In Css*/
 .boton-elegante {
-    padding: 15px 30px;
+    padding: 10px 20px;
     border: 2px solid #0079ca;
     background-color: #0079ca;
     color: #ffffff;

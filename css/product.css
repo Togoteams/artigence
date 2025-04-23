@@ -1,0 +1,54 @@
+.blood-section {
+    padding: 60px 0;
+    background-color: #c4c4c4;
+  }
+
+  section.lab_analysis {
+    background: var(--white-color);
+    text-align: center;
+}
+
+h4.bottom-para {
+    padding: 0px 223px;
+    margin-bottom: 48px;
+    font-size: 30px;
+    font-weight: 400;
+    color: #777;
+    line-height: 60px;
+   
+    font-family: 'Poppins';
+}
+  .blood-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00539F;
+  }
+
+  .blood-description {
+    font-size: 1.2rem;
+    color: #5A6C84;
+    margin-top: 15px;
+  }
+
+  .finding {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .finding img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+
+  .finding h6 {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .finding small {
+    color: #888;
+  }
