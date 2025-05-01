@@ -1,4 +1,4 @@
-<footer class="bg-light border-top border-dark py-5">
+<footer class="bg-light border-top  py-5">
         <div class="container-fuild">
             <div class="row">
                 <div class="col-md-2">
@@ -22,7 +22,7 @@
 
 
                 <!-- Right Section (Company Info & Social Media) -->
-                <div class="col-md-4 text-end">
+                <div class="col-md-4">
 
                     <h5>
                         Artigence Healthcare Systems

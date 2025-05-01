@@ -15,7 +15,7 @@
                      <li><a href="research.html">RESEARCH</a></li>
                      <li><a href="career.html">CAREER</a></li>
                      <li><a href="news.html">NEWS </a></li>
-                     <li><button class="boton-elegante btn-sm" href="contact-us.html">Contact us</button></li>
+                     <li><button class="boton-elegante btn-sm" onclick="window.location.href='contact-us.php'">Contact us</button></li>
                   </ul>
                </div>
             </div>

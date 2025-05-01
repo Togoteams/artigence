@@ -46,17 +46,17 @@
 
   /* Hide class for exit animation */
   .blood_analysis_content.hide {
-
     animation: slideOut 0.4s ease-in-out forwards;
   }
 
   .tab-button {
-    background: linear-gradient(to right, #1c1c1e, #2e2e2f);
+    background: linear-gradient(301deg, transparent, rgb(197, 197, 197));   
     border: none;
     color: #fff;
     text-align: left;
     padding: 1rem;
-    margin-bottom: 0.5rem;
+    height: 5rem;
+
     cursor: pointer;
     width: 100%;
     border-radius: 5px;
@@ -65,12 +65,13 @@
 
   .tab-button.active,
   .tab-button:hover {
-    background: linear-gradient(to right, #4c4c4f, #636366);
+    background: linear-gradient(301deg, transparent, rgb(197, 197, 197));   
   }
 
   .tab-content img {
     max-width: 100%;
     border-radius: 10px;
+    height: 18rem;
   }
 
   .left-panel {
@@ -96,17 +97,18 @@
 <body>
   <?php include('layout/header.php'); ?>
 
-
+  <section>
+    <h4 class="bottom-para">Empower Your Lab <br> One Device, Infinite Microscopy Possibilities </h4>
+  </section>
   <section class="lab_analysis">
     <div class="container-fuild">
-      <h4 class="bottom-para">Empower Your Lab <br> One Device, Infinite Microscopy Possibilities </h4>
       <div class="row">
         <!-- Sidebar Tabs -->
         <div class="col-md-3 left-panel">
-          <button class="tab-button active" onclick="showTab('one')">
+          <button class="tab-button mb-4 active" onclick="showTab('one')">
             <div class="main-title">BLOOD</div>
           </button>
-          <button class="tab-button" onclick="showTab('two')">
+          <button class="tab-button mb-4" onclick="showTab('two')">
             <div class="main-title">URINE </div>
           </button>
           <button class="tab-button" onclick="showTab('three')">
@@ -119,12 +121,18 @@
         <div class="col-md-9 right-panel">
           <div id="one" class="tab-content">
             <img src="/images/product/blood.svg" alt="Blood">
+            <a href="/details/blood" style="display: inline-block; margin-top: 15px; padding: 8px 16px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">Read More</a>
+
           </div>
           <div id="two" class="tab-content d-none">
             <img src="/images/product/urine.svg">
+            <a href="/details/blood" class="read-more" style="display: inline-block; margin-top: 10px; color: #007BFF; text-decoration: none;">Read More</a>
+
           </div>
           <div id="three" class="tab-content d-none">
             <img src="/images/product/semen.svg">
+            <a href="/details/blood" class="read-more" style="display: inline-block; margin-top: 10px; color: #007BFF; text-decoration: none;">Read More</a>
+
           </div>
 
         </div>
@@ -134,64 +142,178 @@
 
   </section>
 
-  <section class="blood-section">
-  <div class=" container-fuild">
-    <div class="row align-items-center">
-      <!-- Left Section -->
-      <div class="col-md-6">
-        <h2 class="blood-title">Blood Analysis</h2>
-        <p class="blood-description">
-          Analyse the Peripheral Blood Smear with cutting-edge AI technology and make the diagnosis easier and faster
-        </p>
-      </div>
+  <section class="blood-section mt-4">
+    <div class="container-fuild">
+      <div class="row align-items-center">
+        <!-- Left Section -->
+        <div class="col-md-12">
+          <h2 class="blood-title">Blood Analysis</h2>
+          <p class="blood-description">
+            Analyse the Peripheral Blood Smear with cutting-edge AI technology and make the diagnosis easier and faster
+          </p>
+        </div>
 
-      <!-- Right Section -->
-      <div class="col-md-6">
-        <p class="text-muted mb-4">AI100 with <span style="color:red">Shonit</span> gives an accurate</p>
-
-        <!-- Blood Findings -->
-        <div class="row">
-          <div class="col-6 finding">
-            <img src="/assets/images/7part.png" alt="7-part">
-            <div>
-              <h6>7-part</h6>
-              <small>DC</small>
+        <!-- Right Section -->
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="blood-finding-section-text"> Blood Findings</h3 class="blood-finding-section">
             </div>
           </div>
-
-          <div class="col-6 finding">
-            <img src="/assets/images/nrbc.png" alt="NRBC">
-            <div>
-              <h6>NRBC</h6>
-              <small>Flagging</small>
+          <!-- Blood Findings -->
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="7-part">
+              <div>
+                <h6>RBC Morphological Analysis</h6>
+              </div>
             </div>
-          </div>
 
-          <div class="col-6 finding">
-            <img src="/assets/images/rbc.png" alt="RBC">
-            <div>
-              <h6>RBC</h6>
-              <small>Characterization</small>
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="NRBC">
+              <div>
+                <h6>WBC 5-Part Differential Count</h6>
+
+              </div>
             </div>
-          </div>
 
-          <div class="col-6 finding">
-            <img src="/assets/images/platelet.png" alt="Platelet">
-            <div>
-              <h6>Platelet</h6>
-              <small>Estimation</small>
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="RBC">
+              <div>
+                <h6>WBC Morphological Analysis</h6>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="Platelet">
+              <div>
+                <h6>Platelet Clumping Detection</h6>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="Platelet">
+              <div>
+                <h6>Malaria Species Detection</h6>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  <section class="blood-section mt-4">
+    <div class="container-fuild">
+      <div class="row align-items-center">
+        <!-- Left Section -->
+        <div class="col-md-12">
+          <h2 class="blood-title">Urine Analysis</h2>
+          <p class="blood-description">
+            Elevate the Urine Microscopic Analysis with our state-of-the-art AI technology
+          </p>
+        </div>
 
+        <!-- Right Section -->
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="blood-finding-section-text">Urine Findings</h3>
+            </div>
+          </div>
+          <!-- Blood Findings -->
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="7-part">
+              <div>
+                <h6>RBC</h6>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="NRBC">
+              <div>
+                <h6>Epithelial Cells</h6>
+
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="RBC">
+              <div>
+                <h6>Casts</h6>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="Platelet">
+              <div>
+                <h6>WBC</h6>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="Platelet">
+              <div>
+                <h6>Crystals</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blood-section mt-4">
+    <div class="container-fuild">
+      <div class="row align-items-center">
+        <!-- Left Section -->
+        <div class="col-md-12">
+          <h2 class="blood-title">Semen Analysis</h2>
+          <p class="blood-description">
+          Get comprehensive insights on the Semen Samples with robust AI technology
+          </p>
+        </div>
+
+        <!-- Right Section -->
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="blood-finding-section-text">Semen Findings</h3>
+            </div>
+          </div>
+          <!-- Blood Findings -->
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="7-part">
+              <div>
+                <h6>Sperm Count</h6>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="NRBC">
+              <div>
+                <h6>Sperm Motility</h6>
+
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-lg-3 finding">
+              <img src="/images/product/rbc-analysis.png" alt="RBC">
+              <div>
+                <h6>Sperm Defects</h6>
+              </div>
+            </div>
+
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 
 
   <section class="key_benefits">
-    <div class="container text-center">
+    <div class="container-fuild text-center">
       <div class="benefits_title">Key Benefits & Features</div>
       <div class="row justify-content-center">
         <div class="col-md-3 feature-card">

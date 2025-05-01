@@ -1018,8 +1018,8 @@ a.product_book_btn:hover {
 }
 
 section.key_benefits {
-    background: var(--primary-color);
-    color: #fff;
+    background: white;
+    color: rgb(0, 121, 202);
     padding: 50px;
 }
 
@@ -1033,20 +1033,17 @@ section.key_benefits {
 }
 
 .feature-card {
-    background: var(--card-background);
-    padding: 16px;
+    background: linear-gradient(301deg, transparent, rgb(197, 197, 197));    padding: 16px;
     margin: 10px;
     text-align: left;
     border-radius: 16px;
-    border: 1px solid;
     width: 337px;
-    height: 376px;
     transition: all ease-in-out 0.3s;
 }
 
 .feature-card:hover {
-    transform: scale3d(0.94, 0.94, 1.01);
-    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
  .card{
@@ -1068,6 +1065,7 @@ section.key_benefits {
     font-family: Poppins;
     font-size: 24px;
     font-weight: 500;
+    color: rgb(119, 119, 119)    ;
     line-height: 36px;
     text-align: left;
 }
@@ -1078,7 +1076,7 @@ section.key_benefits {
     font-weight: 400;
     line-height: 24px;
     text-align: left;
-    color: #CED7DE;
+    color: rgb(119, 119, 119);
 }
 
 section.page_not_found {
