@@ -12,9 +12,9 @@
                <div class="stellarnav">
                   <ul>
                      <li><a href="product.php">PRODUCTS</a></li>
-                     <li><a href="research.html">RESEARCH</a></li>
-                     <li><a href="career.html">CAREER</a></li>
-                     <li><a href="news.html">NEWS </a></li>
+                     <li><a href="research.php">RESEARCH</a></li>
+                     <li><a href="career.php">CAREER</a></li>
+                     <li><a href="news.php">NEWS </a></li>
                      <li><button class="boton-elegante btn-sm" onclick="window.location.href='contact-us.php'">Contact us</button></li>
                   </ul>
                </div>

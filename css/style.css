@@ -585,11 +585,17 @@ footer p {
 .contact_header {
     text-align: center;
     padding: 100px 0px;
-    color: #fff;
+    color: #777;
     position: relative;
-    background: linear-gradient(163.64deg, rgba(0, 155, 224, 0.3) -45.99%, rgba(0, 155, 224, 0) 92.21%);
+    background: linear-gradient(301deg, transparent, rgb(197, 197, 197));    padding: 16px;
     border-radius: 20px;
+    transition: all 0.4s ease;
+
 }
+.contact_header:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+  }
 
 .contact_header h1 {
     font-family: 'IBM Plex Mono';
@@ -611,7 +617,7 @@ footer p {
 }
 
 .contacus_wrapper {
-    background-color: #223D5C;
+    background-color: #ffffff;
 }
 
 
@@ -633,7 +639,6 @@ img.position_img {
     width: 100%;
     background: #FFFFFF0D;
     padding: 14px;
-    color: #fff;
     border-radius: 6px;
 }
 
@@ -700,7 +705,6 @@ form.row {
 }
 
 .reach_us {
-    padding: 90px 0px;
 }
 
 .reach_us>h2 {
@@ -709,15 +713,20 @@ form.row {
     font-weight: 600;
     line-height: 62.93px;
     text-align: center;
-    color: #fff;
+    color: #777;
     margin-bottom: 15px;
+}
+
+.reach_us img {
+   
+    color: #777;
 }
 
 .reach_us>p {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #fff;
+    color: #777;
     font-family: Inter;
     font-size: 20px;
     font-weight: 500;
@@ -733,7 +742,7 @@ form.row {
     font-weight: 600;
     line-height: 24.2px;
     text-align: left;
-    color: #fff;
+    color: #777;
     margin-bottom: 13px;
 }
 
@@ -743,7 +752,7 @@ form.row {
     font-weight: 400;
     line-height: 19.36px;
     text-align: left;
-    color: #fff;
+    color: #777;
     margin-bottom: 10px;
 }
 
