@@ -1,5 +1,5 @@
 .blood-section {
-    padding: 60px 0;
+    padding: 1rem 0;
     background-color: #f9f9f9;
   }
 
@@ -28,19 +28,58 @@ h4.bottom-para {
   .blood-finding-section-text{
     padding: 10px;
     color: #777;
+    font-weight: 600;
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center;     /* vertical centering */
+    height: 100%;            /* make sure the parent allows height */
+    text-align: center;
+  }
+  .blood-finding-section{
+    padding: 20px 0px 20px 0px;
   }
   .blood-description {
     font-size: 1.5rem;
-    color: #5A6C84;
+    color: #777;
     margin-top: 15px;
     text-align: center;
   }
 
   .finding {
     display: flex;
-    align-items: center;
-    margin-bottom: 30px;
+    justify-content: center;
+    text-align: center;
   }
+  
+  .finding-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .finding-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .finding-content:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px var(--primary-color);
+  }
+  
+  .finding-content h6 {
+    margin-top: 10px;
+    font-weight: 200;
+    color: #444;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+ 
+
 
   .finding img {
     width: 70px;
@@ -52,9 +91,25 @@ h4.bottom-para {
 
   .finding h6 {
     margin: 0;
-    font-weight: 600;
+    font-weight: 100;
   }
 
   .finding small {
     color: #888;
   }
+
+  .read-more-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .read-more-button:hover {
+    background-color: #0056b3;
+  }
+  

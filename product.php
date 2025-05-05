@@ -28,22 +28,24 @@ ob_start(); ?>
   }
 
   .tab-button {
-    background: linear-gradient(301deg, transparent, rgb(197, 197, 197));
+    background: linear-gradient(301deg, transparent, #0079ca);
     border: none;
     color: #fff;
     text-align: left;
     padding: 1rem;
     height: 5rem;
-
     cursor: pointer;
     width: 100%;
     border-radius: 5px;
     transition: background 0.3s ease;
   }
 
+
   .tab-button.active,
   .tab-button:hover {
-    background: linear-gradient(301deg, transparent, rgb(197, 197, 197));
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px var(--primary-color);
+    border: none;
   }
 
   .tab-content img {
@@ -69,6 +71,10 @@ ob_start(); ?>
   .main-title {
     font-size: 1rem;
     font-weight: bold;
+  }
+
+  .highlight-section {
+    animation: pulse-highlight 1.5s ease-out;
   }
 </style>
 
@@ -96,21 +102,30 @@ ob_start(); ?>
       <div class="col-md-9 right-panel">
         <div id="one" class="tab-content">
           <img src="/images/product/blood.svg" alt="Blood">
-          <a href="/details/blood"
-            style="display: inline-block; margin-top: 15px; padding: 8px 16px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">Read
-            More</a>
+          <div>
+            <button href="#blood-analysis" class="boton-elegante btn-sm mt-3"
+              onclick="scrollToSection(event, 'blood-analysis')">Read More</button>
+
+          </div>
+
 
         </div>
         <div id="two" class="tab-content d-none">
           <img src="/images/product/urine.svg">
-          <a href="/details/blood" class="read-more"
-            style="display: inline-block; margin-top: 10px; color: #007BFF; text-decoration: none;">Read More</a>
+          <div>
+            <button href="#urine-analysis" class="boton-elegante btn-sm mt-3"
+              onclick="scrollToSection(event, 'blood-analysis')">Read More</button>
+          </div>
+
 
         </div>
         <div id="three" class="tab-content d-none">
           <img src="/images/product/semen.svg">
-          <a href="/details/blood" class="read-more"
-            style="display: inline-block; margin-top: 10px; color: #007BFF; text-decoration: none;">Read More</a>
+          <div>
+            <button href="#semen-analysis" class="boton-elegante btn-sm mt-3"
+              onclick="scrollToSection(event, 'blood-analysis')">Read More</button>
+          </div>
+
 
         </div>
 
@@ -121,66 +136,69 @@ ob_start(); ?>
 
 </section>
 
-<section class="blood-section mt-4">
+<section class="blood-section mt-4" id="blood-analysis">
   <div class="container-fuild">
     <div class="row align-items-center">
       <!-- Left Section -->
       <div class="col-md-12">
-        <h2 class="blood-title">Blood Analysis</h2>
+        <h2 class="blood-title"><span class="blood-title-span">Blood Analysis</span></h2>
         <p class="blood-description">
           Analyse the Peripheral Blood Smear with cutting-edge AI technology and make the diagnosis easier and faster
         </p>
       </div>
-
       <!-- Right Section -->
       <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-12">
-            <h3 class="blood-finding-section-text"> Blood Findings</h3 class="blood-finding-section">
+        <div class="blood-finding-section">
+          <div class="row">
+            <div class="col-md-4">
+              <h3 class="blood-finding-section-text"> Blood Findings</h3>
+            </div>
+            <div class="col-md-8">
+
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="7-part">
+                    <h6>RBC Morphological Analysis</h6>
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="NRBC">
+                    <h6>WBC 5-Part Differential Count</h6>
+
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="RBC">
+                    <h6>WBC Morphological Analysis</h6>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="Platelet">
+                    <h6>Platelet Clumping Detection</h6>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="Platelet">
+                    <h6>Malaria Species Detection</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- Blood Findings -->
-        <div class="row">
-          <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="7-part">
-            <div>
-              <h6>RBC Morphological Analysis</h6>
-            </div>
-          </div>
 
-          <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="NRBC">
-            <div>
-              <h6>WBC 5-Part Differential Count</h6>
-
-            </div>
-          </div>
-
-          <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="RBC">
-            <div>
-              <h6>WBC Morphological Analysis</h6>
-            </div>
-          </div>
-
-          <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="Platelet">
-            <div>
-              <h6>Platelet Clumping Detection</h6>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="Platelet">
-            <div>
-              <h6>Malaria Species Detection</h6>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </section>
-<section class="blood-section mt-4">
+<section class="blood-section mt-4" id="urine-analysis">
   <div class="container-fuild">
     <div class="row align-items-center">
       <!-- Left Section -->
@@ -193,54 +211,59 @@ ob_start(); ?>
 
       <!-- Right Section -->
       <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-12">
-            <h3 class="blood-finding-section-text">Urine Findings</h3>
+        <div class="blood-finding-section">
+          <div class="row">
+            <div class="col-md-8">
+              <!-- Unrine Findings -->
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="7-part">
+                    <h6>RBC</h6>
+                  </div>
+                </div>
+  
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="NRBC">
+                    <h6>Epithelial Cells</h6>
+  
+                  </div>
+                </div>
+  
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="RBC">
+                    <h6>Casts</h6>
+                  </div>
+                </div>
+  
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="Platelet">
+                    <h6>WBC</h6>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="Platelet">
+                    <h6>Crystals</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h3 class="blood-finding-section-text">Urine Findings</h3>
+            </div>
           </div>
         </div>
-        <!-- Blood Findings -->
-        <div class="row">
-          <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="7-part">
-            <div>
-              <h6>RBC</h6>
-            </div>
-          </div>
 
-          <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="NRBC">
-            <div>
-              <h6>Epithelial Cells</h6>
-
-            </div>
-          </div>
-
-          <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="RBC">
-            <div>
-              <h6>Casts</h6>
-            </div>
-          </div>
-
-          <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="Platelet">
-            <div>
-              <h6>WBC</h6>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="Platelet">
-            <div>
-              <h6>Crystals</h6>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="blood-section mt-4">
+<section class="blood-section mt-4" id="semen-analysis">
   <div class="container-fuild">
     <div class="row align-items-center">
       <!-- Left Section -->
@@ -254,36 +277,39 @@ ob_start(); ?>
       <!-- Right Section -->
       <div class="col-md-12">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-4">
             <h3 class="blood-finding-section-text">Semen Findings</h3>
           </div>
-        </div>
-        <!-- Blood Findings -->
+          <div class="col-md-8">
+              <!-- Blood Findings -->
         <div class="row">
           <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="7-part">
-            <div>
+            <div class="finding-content">
+              <img src="/images/product/rbc-analysis.png" alt="7-part">
               <h6>Sperm Count</h6>
             </div>
           </div>
 
           <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="NRBC">
-            <div>
+            <div class="finding-content">
+              <img src="/images/product/rbc-analysis.png" alt="NRBC">
               <h6>Sperm Motility</h6>
 
             </div>
           </div>
 
           <div class="col-md-3 col-sm-6 col-lg-3 finding">
-            <img src="/images/product/rbc-analysis.png" alt="RBC">
-            <div>
+            <div class="finding-content">
+              <img src="/images/product/rbc-analysis.png" alt="RBC">
               <h6>Sperm Defects</h6>
             </div>
           </div>
 
 
         </div>
+          </div>
+        </div>
+      
       </div>
     </div>
   </div>
@@ -326,13 +352,27 @@ ob_start(); ?>
   </div>
 </section>
 <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('d-none'));
-      document.getElementById(tabId).classList.remove('d-none');
-      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-      event.currentTarget.classList.add('active');
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('d-none'));
+    document.getElementById(tabId).classList.remove('d-none');
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+  }
+</script>
+<script>
+  function scrollToSection(event, id) {
+    event.preventDefault(); // prevent default anchor behavior
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      section.classList.add('highlight-section');
+      setTimeout(() => section.classList.remove('highlight-section'), 1500);
     }
-  </script>
+  }
+</script>
 <?php
 $content = ob_get_clean();
 

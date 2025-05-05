@@ -106,3 +106,22 @@ ob_start(); ?>
 $content = ob_get_clean();
 
 include __DIR__ . '/layout/main.php';
+?>
+<script>
+// Script to duplicate logos for continuous scrolling
+document.addEventListener('DOMContentLoaded', function () {
+    const logoGrid = document.getElementById('logoGrid');
+
+    // Individual logo hover handling
+    const logoItems = logoGrid.querySelectorAll('.logo-item');
+    logoItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            logoGrid.style.animationPlayState = 'paused';
+        });
+
+        item.addEventListener('mouseleave', () => {
+            logoGrid.style.animationPlayState = 'running';
+        });
+    });
+});
+</script>

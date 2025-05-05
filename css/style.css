@@ -13,7 +13,7 @@
     font-display: swap;
 }
 :root {
-    --primary-color: #1779b9; /* Defining a variable */
+    --primary-color: #0079ca; /* Defining a variable */
     --card-background: #014d81;
     --button-hover-color: #014d81;
     --primary-font-size: 16px;
@@ -21,8 +21,14 @@
     --white-color: #ffffff;
     --theme-font-color: #3498db;
     --font-size: 16px;
+    --card-hover-translate: translateY(-5px);
+    --card-hover-shadow: 0 4px 8px var(--primary-color);
+    --card-hover-border: none;
   }
-
+button:focus {
+    outline: none;
+ 
+}
 
 body {
     padding: 0;
@@ -31,8 +37,8 @@ body {
 
 }
 .container-fuild{
-    margin-left:200px !important;
-    margin-right:200px !important
+    margin-left:10% !important;
+    margin-right:10% !important
 }
 .logo-img{
     height: 50px;
@@ -107,9 +113,12 @@ ul {
     /* transition: all 0.2s ease-in-out; */
 }
 
-.stellarnav>ul>li>a:hover {
+.stellarnav > ul > li > a:hover,
+.stellarnav > ul > li > a.active {
     color: #014d81;
+    /* text-shadow: 3px 5px 3px var(--primary-color); */
 }
+
 
 .stellarnav.right.desktop {
     text-align: right;
@@ -134,16 +143,20 @@ a.nav-link-btn:hover {
     color: #fff !important;
     outline: 2px solid #166ca7; /* Solid outline */
 }
-
+header{
+    padding: 15px 0px;
+    box-shadow: 0 4px 8px #e6e6e6;
+}
+.button-section{
+    padding: 0px 8px;
+    margin: 0px 0px 0px 10px;
+}
 
 /* header ul li:last-child > a:hover{
 box-shadow: 0px -1px 2px #014d8100069;
 color:#fff;
 } */
 
-header {
-    padding: 15px 0px;
-}
 
 .hero_sec h1 {
     font-family: Inter;
@@ -311,7 +324,7 @@ header {
     font-size: 22px;
     font-weight: 500;
     line-height: 42px;
-    color: #777;
+    color: #FFFFFF;
     width: 364px;
     text-align: left;
 }
@@ -321,7 +334,7 @@ header {
     font-size: 18px;
     font-weight: 400;
     line-height: 30px;
-    color: #777;
+    color: #ffffff;
     text-align: left;
     max-width: 344px;
 }
@@ -331,7 +344,7 @@ header {
 }
 
 .s_card {
-    background: linear-gradient(301deg,transparent, #c5c5c5);
+    background: linear-gradient(301deg,transparent, var(--primary-color));
     padding: 40px 19px 40px 19px;
     flex: 1;
     border-radius: 33px;
@@ -341,7 +354,7 @@ header {
 }
 .s_card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px var(--primary-color);
 }
 
 
@@ -403,24 +416,12 @@ header {
 
 
 .get_in_touch {
-    color: #fff;
-    padding: 90px 0px;
+    color: #777;
     /* background: #003457;
     background-image: url(../images/getintouch-bg.svg); */
     background-repeat: no-repeat;
     background-size: cover;
 
-}
-
-.get_in_touch h2 {
-    max-width: 496px;
-    font-family: Inter;
-    font-size: 34px;
-    font-weight: 500;
-    line-height: 53.25px;
-    text-align: left;
-    color:#0079ca ;
-    text-transform: uppercase;
 }
 
 .get_in_touch a span {
@@ -585,16 +586,17 @@ footer p {
 .contact_header {
     text-align: center;
     padding: 100px 0px;
-    color: #777;
+    color: #ffffff;
     position: relative;
-    background: linear-gradient(301deg, transparent, rgb(197, 197, 197));    padding: 16px;
+    background: linear-gradient(301deg, transparent, var(--primary-color));    padding: 16px;
     border-radius: 20px;
     transition: all 0.4s ease;
 
 }
 .contact_header:hover {
-    transform: scale(1.01);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px var(--primary-color);
+    border: none;
   }
 
 .contact_header h1 {
@@ -638,7 +640,7 @@ img.position_img {
     border: 1px solid #16161633;
     width: 100%;
     background: #FFFFFF0D;
-    padding: 14px;
+    padding: 4px;
     border-radius: 6px;
 }
 
@@ -678,34 +680,53 @@ form.row {
 
 .get_in_touch.contact_us {
     background: none;
-    max-width: 800px;
+    padding: 0.2rem 0;
+    display: flex;
     margin: 0 auto;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .get_in_touch.contact_us h2 {
-    font-family: IBM Plex Mono;
     font-size: 36px;
     font-weight: 500;
     line-height: 46.8px;
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 15px;
     max-width: 100%;
 
 }
-
+.contact-details h2 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 46.8px;
+    text-align: center;
+    color: #777;
+    text-transform: uppercase;
+    max-width: 100%;
+}
+.contact-details p{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #777;
+    text-align: center;
+}
+.contact-details{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-direction: column;
+}
 .get_in_touch.contact_us p {
     font-family: Poppins;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
+    color: #777;
     text-align: center;
-    margin-bottom: 20px;
-
 }
 
-.reach_us {
-}
 
 .reach_us>h2 {
     font-family: Inter;
@@ -720,6 +741,9 @@ form.row {
 .reach_us img {
    
     color: #777;
+}
+.reach_us{
+    padding: 2rem 0;
 }
 
 .reach_us>p {
@@ -994,12 +1018,10 @@ a.product_book_btn:hover {
 .card {
     color: white;
     border: none;
-    margin-bottom: 20px;
-    padding: 12px 16px 12px 16px;
     gap: 4px;
     backdrop-filter: blur(12px);
     background: #FFFFFF0D;
-    margin-right: 30px;
+    transition: all 0.3s ease-in-out;
 }
 
 .card h2 {
@@ -1042,7 +1064,7 @@ section.key_benefits {
 }
 
 .feature-card {
-    background: linear-gradient(301deg, transparent, rgb(197, 197, 197));    padding: 16px;
+    background: linear-gradient(301deg, transparent, var(--primary-color));    padding: 16px;
     margin: 10px;
     text-align: left;
     border-radius: 16px;
@@ -1055,12 +1077,9 @@ section.key_benefits {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
- .card{
-  transition: all 0.3s ease-in-out;
-}
+
 
  .card:hover{
-    transform: scale3d(0.94, 0.94, 1.01);
     cursor: pointer;
 }
 
@@ -1074,7 +1093,7 @@ section.key_benefits {
     font-family: Poppins;
     font-size: 24px;
     font-weight: 500;
-    color: rgb(119, 119, 119)    ;
+    color: rgb(255, 255, 255)    ;
     line-height: 36px;
     text-align: left;
 }
@@ -1085,7 +1104,7 @@ section.key_benefits {
     font-weight: 400;
     line-height: 24px;
     text-align: left;
-    color: rgb(119, 119, 119);
+    color: rgb(255, 255, 255);
 }
 
 section.page_not_found {
@@ -1194,7 +1213,7 @@ section.page_not_found img {
     .stellarnav>ul>li>a {
         margin: 0px 0px 0px 15px;
     }
-
+   
    
 
 
@@ -1300,30 +1319,14 @@ section.news_banner img {
     overflow: hidden;
     font-weight: bold;
   }
+
   
-  .boton-elegante::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.25) 0%,
-      rgba(255, 255, 255, 0) 90%
-    );
-    transform: scale(0);
-    transition: transform 0.5s ease;
-  }
-  
-  .boton-elegante:hover::after {
-    transform: scale(4);
-  }
+ 
   
   .boton-elegante:hover {
-    border-color: #278cca;
-    background: #278cca;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--primary-color);
+    border: none;
   }
   
   
