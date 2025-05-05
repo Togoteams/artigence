@@ -8,9 +8,9 @@ ob_start(); ?>
              artigence.ai/books
             </div>
             <div class="home-button">
-             <a class="btn btn-primary" href="/">
-              Home
-             </a>
+             
+             <button class="boton-elegante btn-sm" onclick="window.location.href='/'">Home</button></li>
+
             </div>
          </div>
       </section>
