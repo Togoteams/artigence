@@ -680,11 +680,13 @@ form.row {
 
 .get_in_touch.contact_us {
     background: none;
-    padding: 0.2rem 0;
+    padding: 0.8rem 0;
     display: flex;
     margin: 0 auto;
     flex-direction: column;
     gap: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.1);
 }
 
 .get_in_touch.contact_us h2 {
