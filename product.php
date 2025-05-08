@@ -213,6 +213,9 @@ ob_start(); ?>
       <div class="col-md-12">
         <div class="blood-finding-section">
           <div class="row">
+          <div class="col-md-4">
+              <h3 class="blood-finding-section-text">Urine Findings</h3>
+            </div>
             <div class="col-md-8">
               <!-- Unrine Findings -->
               <div class="row">
@@ -252,9 +255,7 @@ ob_start(); ?>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <h3 class="blood-finding-section-text">Urine Findings</h3>
-            </div>
+           
           </div>
         </div>
 
@@ -276,6 +277,7 @@ ob_start(); ?>
 
       <!-- Right Section -->
       <div class="col-md-12">
+        <div class="blood-finding-section">
         <div class="row">
           <div class="col-md-4">
             <h3 class="blood-finding-section-text">Semen Findings</h3>
@@ -309,7 +311,7 @@ ob_start(); ?>
         </div>
           </div>
         </div>
-      
+        </div>
       </div>
     </div>
   </div>
