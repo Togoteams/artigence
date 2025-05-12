@@ -16,12 +16,13 @@ h4.bottom-para {
     color: #777;
     text-align: center;
     line-height: 60px;
-   
-    font-family: 'Poppins';
+    font-family: var(--font-family);
+    font-optical-sizing: auto;
 }
   .blood-title {
     font-size: 2.5rem;
-    font-weight: bold;
+    font-weight: 500;
+    font-family: var(--font-family);
     text-transform: uppercase;
     text-align: center;
     color: rgb(0, 121, 202);
@@ -31,6 +32,7 @@ h4.bottom-para {
     color: #777;
     font-weight: 600;
     display: flex;
+    font-family: var(--font-family);
     justify-content: center; /* horizontal centering */
     align-items: center;     /* vertical centering */
     height: 100%;            /* make sure the parent allows height */
@@ -41,6 +43,8 @@ h4.bottom-para {
   }
   .blood-description {
     font-size: 1.5rem;
+    font-family: var(--font-family);
+    font-optical-sizing: auto;
     color: #777;
     margin-top: 15px;
     text-align: center;
@@ -76,6 +80,7 @@ h4.bottom-para {
     margin-top: 10px;
     font-weight: 200;
     color: #444;
+    font-family: var(--font-family);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   }
   

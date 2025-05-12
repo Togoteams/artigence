@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Home | Product';
+$pageTitle = 'Artigence | Product';
 ob_start(); ?>
 <link rel="stylesheet" href="css/product.css" type="text/css">
 
@@ -55,7 +55,6 @@ ob_start(); ?>
   }
 
   .left-panel {
-    border-right: 1px solid #444;
     padding-right: 2rem;
   }
 
@@ -78,10 +77,19 @@ ob_start(); ?>
   }
 </style>
 
-<section>
-  <h4 class="bottom-para">Empower Your Lab <br> One Device, Infinite Microscopy Possibilities </h4>
-</section>
-<section class="lab_analysis">
+
+<section class="hero_sec p-4">
+        <div class="container-fuild hero-content">
+            <h1>
+               Empower Your Lab
+            </h1>
+            <div>
+                <h4 class="subtitle">One Device, Infinite Microscopy Possibilities</h4>
+            </div>
+            <!-- <a href="">CONTACT US</a> -->
+        </div>
+    </section>
+<section class="lab_analysis mt-5 ">
   <div class="container-fuild">
     <div class="row">
       <!-- Sidebar Tabs -->

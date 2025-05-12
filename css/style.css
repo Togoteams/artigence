@@ -4,14 +4,6 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'Graphik-bold';
-    src: url('./fonts/Graphik-Bold.woff2') format('woff2'),
-        url('./fonts/Graphik-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
 :root {
     --primary-color: #0079ca; /* Defining a variable */
     --card-background: #014d81;
@@ -21,6 +13,7 @@
     --white-color: #ffffff;
     --theme-font-color: #3498db;
     --font-size: 16px;
+    --font-family: "Ubuntu", sans-serif;
     --card-hover-translate: translateY(-5px);
     --card-hover-shadow: 0 4px 8px var(--primary-color);
     --card-hover-border: none;
@@ -33,7 +26,9 @@ button:focus {
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-style: normal;
 
 }
 .container-fuild{
@@ -103,7 +98,7 @@ ul {
 
 .stellarnav>ul>li>a {
     padding: 0px 8px;
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -159,14 +154,14 @@ color:#fff;
 
 
 .hero_sec h1 {
-    font-family: Inter;
-    font-size: 90px;
+    font-family: var(--font-family);
+    font-size: 88px;
     font-weight: 700;
     text-align: left;
     color: #fff;
 }
 .hero_sec h4 {
-    font-family: Inter;
+    font-family: var(--font-family);
     font-size: 40px;
     font-weight: 700;
     text-align: left;
@@ -177,7 +172,7 @@ color:#fff;
 .hero_sec a {
     display: inline-block;
     margin-top: 50px;
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -310,7 +305,7 @@ color:#fff;
 }
 
 .solutions h2 {
-    font-family: Inter;
+    font-family: var(--font-family);
     font-size: 64px;
     font-weight: 500;
     line-height: 92px;
@@ -320,7 +315,7 @@ color:#fff;
 }
 
 .s_card h3 {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 22px;
     font-weight: 500;
     line-height: 42px;
@@ -330,7 +325,7 @@ color:#fff;
 }
 
 .s_card p {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 18px;
     font-weight: 400;
     line-height: 30px;
@@ -390,7 +385,7 @@ color:#fff;
     /* Fixed height of 800px */
     margin: 0;
     /* Remove any margins */
-    cursor: pointer;
+    cursor: povar(--font-family);
     overflow: hidden;
     /* Ensure no overflow */
     height: 100vh;
@@ -426,7 +421,7 @@ color:#fff;
 
 .get_in_touch a span {
     background: #FFFFFF;
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 28px;
     font-weight: 500;
     line-height: 42px;
@@ -501,7 +496,7 @@ color: #777;
 
 
 footer h4 {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 24px;
     font-weight: 500;
     line-height: 36px;
@@ -513,7 +508,7 @@ footer h4 {
 }
 
 footer ul li a {
-    font-family: Inter;
+    font-family: var(--font-family);
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
@@ -522,7 +517,7 @@ footer ul li a {
 }
 
 footer p {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
@@ -569,7 +564,7 @@ footer p {
 }
 
 .copyright_sec p {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
@@ -612,7 +607,7 @@ footer p {
 
 
 .contact_header p {
-    font-family: Inter;
+    font-family: var(--font-family);
     font-size: 20px;
     font-weight: 500;
     line-height: 24.2px;
@@ -649,7 +644,7 @@ img.position_img {
 
 .get_in_touch input::placeholder,
 .get_in_touch textarea::placeholder {
-    font-family: Inter;
+    font-family: var(--font-family);
     font-size: 15px;
     font-weight: 400;
     line-height: 18.15px;
@@ -733,7 +728,7 @@ form.row {
     flex-direction: column;
 }
 .get_in_touch.contact_us p {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -743,7 +738,7 @@ form.row {
 
 
 .reach_us>h2 {
-    font-family: Inter;
+    font-family: var(--font-family);
     font-size: 52px;
     font-weight: 600;
     line-height: 62.93px;
@@ -765,7 +760,7 @@ form.row {
     align-items: center;
     gap: 8px;
     color: #777;
-    font-family: Inter;
+    font-family: var(--font-family);
     font-size: 20px;
     font-weight: 500;
     line-height: 24.2px;
@@ -775,7 +770,7 @@ form.row {
 }
 
 .reach_us_list h3 {
-    font-family: Inter;
+    font-family: var(--font-family);
     font-size: 20px;
     font-weight: 600;
     line-height: 24.2px;
@@ -785,7 +780,7 @@ form.row {
 }
 
 .reach_us_list p {
-    font-family: Inter;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 400;
     line-height: 19.36px;
@@ -796,7 +791,7 @@ form.row {
 
 
 .reach_us_list a {
-    font-family: Inter;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 500;
     line-height: 21.78px;
@@ -827,7 +822,7 @@ section.career-sec {
   }
 
 section.career-sec p {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 36px;
     font-weight: 500;
     line-height: 54px;
@@ -838,7 +833,7 @@ section.career-sec p {
 
 .career-sec span {
     display: block;
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 20px;
     font-weight: 500;
     line-height: 30px;
@@ -848,7 +843,7 @@ section.career-sec p {
 }
 
 .opening_list h2 {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 36px;
     font-weight: 500;
     line-height: 54px;
@@ -923,7 +918,7 @@ a.product_book_btn:hover {
     border: none;
     margin-left: 55px;
     box-shadow: 6px 8px 0px 0px #014d81;
-    cursor: pointer;
+    cursor: povar(--font-family);
 }
 
 .tab_button button:hover {
@@ -944,7 +939,7 @@ a.product_book_btn:hover {
 
 .blood_analysis_content h2 {
     color: #fff;
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 40px;
     font-weight: 500;
     line-height: 60px;
@@ -954,7 +949,7 @@ a.product_book_btn:hover {
 }
 
 .blood_analysis_content p {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 24px;
     font-weight: 400;
     line-height: 36px;
@@ -998,7 +993,7 @@ a.product_book_btn:hover {
 
 .blood_findings h3 {
     margin-bottom: 45px;
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 32px;
     font-weight: 500;
     line-height: 48px;
@@ -1008,7 +1003,7 @@ a.product_book_btn:hover {
 
 .urine_findings h3 {
     margin-bottom: 45px;
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 32px;
     font-weight: 500;
     line-height: 48px;
@@ -1018,7 +1013,7 @@ a.product_book_btn:hover {
 
 .semen_findings h3 {
     margin-bottom: 45px;
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 32px;
     font-weight: 500;
     line-height: 48px;
@@ -1036,7 +1031,8 @@ a.product_book_btn:hover {
 }
 
 .card h2 {
-    font-family: Poppins;
+   
+    font-family: var(--font-family);
     font-size: 20px;
     font-weight: 500;
     line-height: 30px;
@@ -1044,7 +1040,7 @@ a.product_book_btn:hover {
 }
 
 .card h4 {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 28px;
     font-weight: 500;
     line-height: 42px;
@@ -1052,7 +1048,7 @@ a.product_book_btn:hover {
 }
 
 .card p {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -1067,7 +1063,7 @@ section.key_benefits {
 
 .benefits_title {
     margin-bottom: 25px;
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 32px;
     font-weight: 500;
     line-height: 48px;
@@ -1091,7 +1087,7 @@ section.key_benefits {
 
 
  .card:hover{
-    cursor: pointer;
+    cursor: povar(--font-family);
 }
 
 
@@ -1101,7 +1097,7 @@ section.key_benefits {
 }
 
 .feature-card h5 {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 24px;
     font-weight: 500;
     color: rgb(255, 255, 255)    ;
@@ -1110,7 +1106,7 @@ section.key_benefits {
 }
 
 .feature-card p {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -1132,7 +1128,7 @@ section.page_not_found img {
 
 .home-button {
     margin-top: 20px;
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -1141,7 +1137,7 @@ section.page_not_found img {
 }
 
 .url {
-    font-family: Poppins;
+    font-family: var(--font-family);
     font-size: 13px;
     font-weight: 400;
     line-height: 19.5px;
@@ -1321,7 +1317,7 @@ section.news_banner img {
     background-color: #0079ca;
     color: #ffffff;
     font-size: 1rem;
-    cursor: pointer;
+    cursor: povar(--font-family);
     border-radius: 30px;
     transition: all 0.4s ease;
     outline: none;
