@@ -18,13 +18,22 @@ ob_start(); ?>
         <div class="solutions_caard">
             <div class="s_card">
                 <h3>Lower Costs,Smarter & Faster Diagnosis</h3>
+                <p>
+                    Replace expensive manual labor with AI automation that speeds up routine microscopy and cuts down operational costs.
+                </p>
             </div>
             <div class="s_card">
                 <h3>Improved Pathologist Workflow </h3>
+                <p>
+                    Let pathologists focus on decision-making by automating repetitive tasks like cell detection, classification, and report generation.
+                </p>
             </div>
             <div class="s_card">
                 <h3>All-in-one Solutions for Routine Microscopy
                 </h3>
+                <p>
+                    One compact device. Multiple applications — Blood, Urine, Semen, and more. Expandable and future-ready.
+                </p>
             </div>
         </div>
     </div>

@@ -3,25 +3,19 @@
 
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <!-- Required meta tags -->
+ <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/stellarnav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/responsive.css" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <title>Product</title>
 </head>
 <style>
@@ -119,180 +113,469 @@
 </style>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3 col-sm-4 col-6">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="./images/logo-symbol.svg" alt="logo" class="logo-img">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-9 col-sm-8 col-6">
-                    <div class="stellarnav">
-                        <ul>
-                            <li><a href="product.html" class="active_nav_list">PRODUCT</a></li>
-                            <li><a href="research.html">RESEARCH</a></li>
-                            <li><a href="career.html">CAREER</a></li>
-                            <li><a href="news.html">NEWS </a></li>
-                            <li><a class="nav-link-btn" href="contact-us.html ">Contact us</a></li>
-                        </ul>
-                    </div>
-                </div>
+   <header>
+      <div class="container-fuild" style="margin-left:200px;margin-right:200px">
+         <div class="row align-items-center">
+            <div class="col-md-3 col-sm-4 col-6">
+               <div class="logo">
+                  <a href="index.php">
+                     <img src="./images/logo-symbol.svg" alt="logo" class="logo-img">
+                  </a>
+               </div>
             </div>
+            <div class="col-md-9 col-sm-8 col-6">
+               <div class="stellarnav">
+                  <ul>
+                     <li><a class="nav-link <?= ($currentPage == 'product.php') ? 'active' : '' ?>" href="product.php">PRODUCTS</a></li>
+                     <li><a class="nav-link  <?= ($currentPage == 'research.php') ? 'active' : '' ?>" href="research.php">RESEARCH</a></li>
+                     <li><a class="nav-link <?= ($currentPage == 'career.php') ? 'active' : '' ?>" href="career.php">CAREER</a></li>
+                     <li><a class="nav-link <?= ($currentPage == 'news.php') ? 'active' : '' ?>" href="news.php">NEWS </a></li>
+                     <li>
+                        <div class="button-section">
+                           <button class="boton-elegante btn-sm" onclick="window.location.href='contact-us.php'">Contact us</button></li>
+                        </div>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+</header>
+  <link rel="stylesheet" href="css/product.css" type="text/css">
+
+<style>
+  /* Hide all tabs initially */
+  .blood_analysis_content {
+    display: none;
+    /* Initially hidden */
+    opacity: 0;
+    transform: translateX(100%);
+    /* Start off-screen */
+    transition: transform 0.4s ease-in-out, opacity 0.4s;
+    width: 100%;
+  }
+
+  /* When tab is active, slide it into view */
+  .blood_analysis_content.active {
+    /* Ensure the element is visible before animation */
+    opacity: 1;
+    animation: slideIn 0.4s ease-in-out forwards;
+  }
+
+  /* Hide class for exit animation */
+  .blood_analysis_content.hide {
+    animation: slideOut 0.4s ease-in-out forwards;
+  }
+
+  .tab-button {
+    background: linear-gradient(301deg, transparent, #0079ca);
+    border: none;
+    color: #fff;
+    text-align: left;
+    padding: 1rem;
+    height: 5rem;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+
+
+  .tab-button.active,
+  .tab-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px var(--primary-color);
+    border: none;
+  }
+
+  .tab-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    height: 18rem;
+  }
+
+  .left-panel {
+    padding-right: 2rem;
+  }
+
+  .right-panel {
+    padding-left: 2rem;
+  }
+
+  .sub-heading {
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+
+  .main-title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .highlight-section {
+    animation: pulse-highlight 1.5s ease-out;
+  }
+</style>
+
+
+<section class="hero_sec p-4">
+        <div class="container-fuild hero-content">
+            <h1>
+               Empower Your Lab
+            </h1>
+            <div>
+                <h4 class="subtitle">One Device, Infinite Microscopy Possibilities</h4>
+            </div>
+            <!-- <a href="">CONTACT US</a> -->
         </div>
-    </header>
-   
-    <section class="lab_analysis">
-        <h4 class="bottom-para">Empower Your Lab One Device, Infinite Microscopy Possibilities</h4>
-        <div class="row">
-            <!-- Sidebar Tabs -->
-            <div class="col-md-3 left-panel">
-              <button class="tab-button active" onclick="showTab('one')">
-                <div class="sub-heading">ONE</div>
-                <div class="main-title">AI-enabled clinical assistant</div>
-              </button>
-              <button class="tab-button" onclick="showTab('next')">
-                <div class="sub-heading">NEXT</div>
-                <div class="main-title">Identify and close gaps in care</div>
-              </button>
-              <button class="tab-button" onclick="showTab('lens')">
-                <div class="sub-heading">LENS</div>
-                <div class="main-title">Analyze real-world data</div>
-              </button>
-              <button class="tab-button" onclick="showTab('algos')">
-                <div class="sub-heading">ALGOS</div>
-                <div class="main-title">Algorithmic model insights</div>
-              </button>
-              <div class="mt-3">
-                <a href="#" class="text-white text-decoration-none">EXPLORE OUR TECH & AI &rarr;</a>
-              </div>
+    </section>
+<section class="lab_analysis mt-5 ">
+  <div class="container-fuild">
+    <div class="row">
+      <!-- Sidebar Tabs -->
+      <div class="col-md-3 left-panel">
+        <button class="tab-button mb-4 active" onclick="showTab('one')">
+          <div class="main-title">BLOOD</div>
+        </button>
+        <button class="tab-button mb-4" onclick="showTab('two')">
+          <div class="main-title">URINE </div>
+        </button>
+        <button class="tab-button" onclick="showTab('three')">
+          <div class="main-title">SEMEN</div>
+        </button>
+
+      </div>
+
+      <!-- Content Area -->
+      <div class="col-md-9 right-panel">
+        <div id="one" class="tab-content">
+          <img src="/images/product/blood.svg" alt="Blood">
+          <div>
+            <button href="#blood-analysis" class="boton-elegante btn-sm mt-3"
+              onclick="scrollToSection(event, 'blood-analysis')">Read More</button>
+
+          </div>
+
+
+        </div>
+        <div id="two" class="tab-content d-none">
+          <img src="/images/product/urine.svg">
+          <div>
+            <button href="#urine-analysis" class="boton-elegante btn-sm mt-3"
+              onclick="scrollToSection(event, 'blood-analysis')">Read More</button>
+          </div>
+
+
+        </div>
+        <div id="three" class="tab-content d-none">
+          <img src="/images/product/semen.svg">
+          <div>
+            <button href="#semen-analysis" class="boton-elegante btn-sm mt-3"
+              onclick="scrollToSection(event, 'blood-analysis')">Read More</button>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<section class="blood-section mt-4" id="blood-analysis">
+  <div class="container-fuild">
+    <div class="row align-items-center">
+      <!-- Left Section -->
+      <div class="col-md-12">
+        <h2 class="blood-title"><span class="blood-title-span">Blood Analysis</span></h2>
+        <p class="blood-description">
+          Analyse the Peripheral Blood Smear with cutting-edge AI technology and make the diagnosis easier and faster
+        </p>
+      </div>
+      <!-- Right Section -->
+      <div class="col-md-12">
+        <div class="blood-finding-section">
+          <div class="row">
+            <div class="col-md-4">
+              <h3 class="blood-finding-section-text"> Blood Findings</h3>
             </div>
-      
-            <!-- Content Area -->
-            <div class="col-md-9 right-panel">
-              <div id="one" class="tab-content">
-                <img src="https://via.placeholder.com/800x450" alt="AI Assistant Image">
-              </div>
-              <div id="next" class="tab-content d-none">
-                <img src="https://via.placeholder.com/800x450?text=Gap+Care">
-              </div>
-              <div id="lens" class="tab-content d-none">
-                <img src="https://via.placeholder.com/800x450?text=Lens+Data">
-              </div>
-              <div id="algos" class="tab-content d-none">
-                <img src="https://via.placeholder.com/800x450?text=Algorithm+Insights">
+            <div class="col-md-8">
+
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="7-part">
+                    <h6>RBC Morphological Analysis</h6>
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="NRBC">
+                    <h6>WBC 5-Part Differential Count</h6>
+
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="RBC">
+                    <h6>WBC Morphological Analysis</h6>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="Platelet">
+                    <h6>Platelet Clumping Detection</h6>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="Platelet">
+                    <h6>Malaria Species Detection</h6>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-    </section>
-
-
-
-
-    <section class="key_benefits">
-        <div class="container text-center">
-            <div class="benefits_title">Key Benefits & Features</div>
-            <div class="row justify-content-center">
-                <div class="col-md-3 feature-card">
-                    <img src="./images/acceleration 1.png" alt="">
-                    <h5>Accelerated Results</h5>
-                    <p>Get faster diagnostics with reduced turnaround time.</p>
-                </div>
-                <div class="col-md-3 feature-card">
-                    <img src="./images/cloud 1.png" alt="">
-                    <h5>Limitless Storage</h5>
-                    <p>Enjoy endless digital pathology storage, keeping all your data secure and accessible.</p>
-                </div>
-                <div class="col-md-3 feature-card">
-                    <img src="./images/market-demand 1.png" alt="">
-                    <h5>On-Demand Access</h5>
-                    <p>Access reports anytime, anywhere, for seamless workflow integration.</p>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3 feature-card">
-                    <img src="./images/diagnostic-tool 1.png" alt="">
-                    <h5>Enhanced Diagnostics</h5>
-                    <p>Simplify the identification of rare cases with advanced tools at your fingertips.</p>
-                </div>
-                <div class="col-md-3 feature-card">
-                    <img src="./images/collaborate 1.png" alt="">
-                    <h5>Collaborative Expertise</h5>
-                    <p>Enable remote collaboration on special cases, effortlessly bringing the best minds together.</p>
-                </div>
-            </div>
         </div>
-    </section>
 
-    <footer class="bg-light border-top border-dark py-5">
-        <div class="container">
-            <div class="row">
-                <!-- Left Section (Links) -->
-                <div class="col-md-4">
-                       <div class="footer-links">
-                          <a href="#">Products</a>
-                          <a href="#">Careers</a>
-                          <a href="#">News &amp; Media</a>
-                          <a href="#">Research &amp; Publications</a>
-                          <a href="#">About Us</a>
-                          <a href="#">Contact Us</a>
-                    </div>
-                </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="blood-section mt-4" id="urine-analysis">
+  <div class="container-fuild">
+    <div class="row align-items-center">
+      <!-- Left Section -->
+      <div class="col-md-12">
+        <h2 class="blood-title">Urine Analysis</h2>
+        <p class="blood-description">
+          Elevate the Urine Microscopic Analysis with our state-of-the-art AI technology
+        </p>
+      </div>
 
-                <!-- Middle Section (Logo) -->
-                <div class="col-md-4 text-center">
-                 
-                </div>
-
-                <!-- Right Section (Company Info & Social Media) -->
-                <div class="col-md-4 text-end">
-                   
-                       <h5>
-                          Artigence Healthcare Systems 
-                       Private Limited
-                       </h5>
-                    <p class="text-muted">Plot No. 14/1, Serial No. UGF 14, Shree Ganesh Chamber, Dhantoli, Nagpur, Maharashtra, 
-                       India - 440012</p>
-                    <div>
-                       <div  class="d-flex footer-icons " style="margin-top: 40px; font-size: 15px;">
-                          <div class="ml-2 social-link"><a href="https://www.facebook.com/artigencehealthcare"><img src="images/footer/fb.svg" alt=""></a></div>
-                          <div class="ml-2 social-link"><a href="https://www.instagram.com/artigence_healthcare/"><img src="images/footer/instagram.svg" alt=""></a></div>
-                          <div  class="ml-2 social-link"><a href="https://www.linkedin.com/company/artigence-healthcare/"><img src="images/footer/link.svg" alt=""></a></div>
-                          <div class="ml-2 social-link"><a href=""><img src="images/footer/youtube.svg" alt=""></a></div>
-                         
-                       </div>
-                    </div>
-                </div>
+      <!-- Right Section -->
+      <div class="col-md-12">
+        <div class="blood-finding-section">
+          <div class="row">
+          <div class="col-md-4">
+              <h3 class="blood-finding-section-text">Urine Findings</h3>
             </div>
-            <div class="row  mt-4">
-                <div class="col-md-4">
-                 <div class=""><img src="images/logo.svg" alt="" class="f-logo"></div>
+            <div class="col-md-8">
+              <!-- Unrine Findings -->
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="7-part">
+                    <h6>RBC</h6>
+                  </div>
                 </div>
-                <div class="col-md-4">
-
+  
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="NRBC">
+                    <h6>Epithelial Cells</h6>
+  
+                  </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="text-center py-3  mt-4">
-                        <p class="mb-0 text-muted">All Content Copyright 2024 | 
-                            <a href="#" class="text-dark text-decoration-none">Privacy Policy</a> | 
-                            <a href="#" class="text-dark text-decoration-none">Terms of Use</a>
-                        </p>
-                    </div>
+  
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="RBC">
+                    <h6>Casts</h6>
+                  </div>
                 </div>
+  
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="Platelet">
+                    <h6>WBC</h6>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-4 finding">
+                  <div class="finding-content">
+                    <img src="/images/product/rbc-analysis.png" alt="Platelet">
+                    <h6>Crystals</h6>
+                  </div>
+                </div>
+              </div>
             </div>
+           
+          </div>
         </div>
-   
-        <!-- Bottom Copyright Section -->
-    
-    </footer>
-    <script src="js/jquery-3.6.0.min.js"></script>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blood-section mt-4" id="semen-analysis">
+  <div class="container-fuild">
+    <div class="row align-items-center">
+      <!-- Left Section -->
+      <div class="col-md-12">
+        <h2 class="blood-title">Semen Analysis</h2>
+        <p class="blood-description">
+          Get comprehensive insights on the Semen Samples with robust AI technology
+        </p>
+      </div>
+
+      <!-- Right Section -->
+      <div class="col-md-12">
+        <div class="blood-finding-section">
+        <div class="row">
+          <div class="col-md-4">
+            <h3 class="blood-finding-section-text">Semen Findings</h3>
+          </div>
+          <div class="col-md-8">
+              <!-- Blood Findings -->
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-lg-3 finding">
+            <div class="finding-content">
+              <img src="/images/product/rbc-analysis.png" alt="7-part">
+              <h6>Sperm Count</h6>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-lg-3 finding">
+            <div class="finding-content">
+              <img src="/images/product/rbc-analysis.png" alt="NRBC">
+              <h6>Sperm Motility</h6>
+
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-lg-3 finding">
+            <div class="finding-content">
+              <img src="/images/product/rbc-analysis.png" alt="RBC">
+              <h6>Sperm Defects</h6>
+            </div>
+          </div>
+
+
+        </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="key_benefits">
+  <div class="container-fuild text-center">
+    <div class="benefits_title">Key Benefits & Features</div>
+    <div class="row justify-content-center">
+      <div class="col-md-3 feature-card">
+        <img src="./images/acceleration 1.png" alt="">
+        <h5>Accelerated Results</h5>
+        <p>Get faster diagnostics with reduced turnaround time.</p>
+      </div>
+      <div class="col-md-3 feature-card">
+        <img src="./images/cloud 1.png" alt="">
+        <h5>Limitless Storage</h5>
+        <p>Enjoy endless digital pathology storage, keeping all your data secure and accessible.</p>
+      </div>
+      <div class="col-md-3 feature-card">
+        <img src="./images/market-demand 1.png" alt="">
+        <h5>On-Demand Access</h5>
+        <p>Access reports anytime, anywhere, for seamless workflow integration.</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-3 feature-card">
+        <img src="./images/diagnostic-tool 1.png" alt="">
+        <h5>Enhanced Diagnostics</h5>
+        <p>Simplify the identification of rare cases with advanced tools at your fingertips.</p>
+      </div>
+      <div class="col-md-3 feature-card">
+        <img src="./images/collaborate 1.png" alt="">
+        <h5>Collaborative Expertise</h5>
+        <p>Enable remote collaboration on special cases, effortlessly bringing the best minds together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="bg-light border-top  py-5">
+  <div class="container-fuild">
+    <div class="row">
+      <div class="col-md-2">
+        <div class=""><img src="images/logo.svg" alt="" class="f-logo"></div>
+      </div>
+      <!-- Left Section (Links) -->
+      <div class="col-md-4">
+        <div class="footer-links">
+          <a href="product.php"> Products </a>
+          <a href="career.php">Career</a>
+          <a href="news.php">News &amp; Media</a>
+          <a href="research.php">Research &amp; Publications</a>
+          <a href="#">About Us</a>
+          <a href="contact-us.php">Contact Us</a>
+        </div>
+      </div>
+      <div class="col-md-2">
+      </div>
+
+      <!-- Middle Section (Logo) -->
+
+
+      <!-- Right Section (Company Info & Social Media) -->
+      <div class="col-md-4">
+
+        <h5>
+          Artigence Healthcare Systems
+          Private Limited
+        </h5>
+        <p class="text-muted" style="width: 56%;">Plot No. 14/1, Serial No. UGF 14, Shree Ganesh Chamber,
+          Dhantoli, Nagpur,
+          Maharashtra,
+          India - 440012</p>
+        <div>
+          <div class="d-flex footer-icons ">
+            <div class="social-link"><a href="https://www.facebook.com/artigencehealthcare"><img
+                  src="images/footer/fb.svg" alt=""></a></div>
+            <div class="ml-2 social-link"><a href="https://www.instagram.com/artigence_healthcare/"><img
+                  src="images/footer/instagram.svg" alt=""></a></div>
+            <div class="ml-2 social-link"><a href="https://www.linkedin.com/company/artigence-healthcare/"><img
+                  src="images/footer/link.svg" alt=""></a></div>
+            <div class="ml-2 social-link"><a href=""><img src="images/footer/x.svg" style="height: 35px;" alt=""></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row  mt-4 thin-strip">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <div class="text-center">
+          <p class="mt-3 mb-2 text-muted">All Content Copyright 2025 |
+            <a href="#" class="text-dark text-decoration-none">Privacy Policy</a> |
+            <a href="#" class="text-dark text-decoration-none">Terms of Use</a>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Copyright Section -->
+
+</footer>
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/stellarnav.min.js"></script>
-
+    
     <script>
         jQuery('.stellarnav').stellarNav({
             theme: 'plain',
@@ -301,16 +584,53 @@
             position: 'right',
 
         });
+
+        
+
+        $('#part_slide').owlCarousel({
+            loop: true,
+            rtl: false,
+            // direction: rtl,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            smartSpeed: 2000,
+            autoplayHoverPause: true,
+            margin: 50,
+            nav: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        });
     </script>
-
 <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('d-none'));
-      document.getElementById(tabId).classList.remove('d-none');
-      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-      event.currentTarget.classList.add('active');
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('d-none'));
+    document.getElementById(tabId).classList.remove('d-none');
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+  }
+</script>
+<script>
+  function scrollToSection(event, id) {
+    event.preventDefault(); // prevent default anchor behavior
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      section.classList.add('highlight-section');
+      setTimeout(() => section.classList.remove('highlight-section'), 1500);
     }
-  </script>
-</body>
-
-</html>
+  }
+</script>
+ 
