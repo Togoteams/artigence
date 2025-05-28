@@ -1,5 +1,5 @@
 .blood-section {
-    padding: 1rem 0;
+    padding: 60px 0;
     background-color: #f9f9f9;
   }
 
@@ -16,76 +16,31 @@ h4.bottom-para {
     color: #777;
     text-align: center;
     line-height: 60px;
-    font-family: var(--font-family);
-    font-optical-sizing: auto;
+   
+    font-family: 'Poppins';
 }
   .blood-title {
     font-size: 2.5rem;
-    font-weight: 500;
-    font-family: var(--font-family);
-    text-transform: uppercase;
+    font-weight: bold;
     text-align: center;
     color: rgb(0, 121, 202);
   }
   .blood-finding-section-text{
     padding: 10px;
     color: #777;
-    font-weight: 600;
-    display: flex;
-    font-family: var(--font-family);
-    justify-content: center; /* horizontal centering */
-    align-items: center;     /* vertical centering */
-    height: 100%;            /* make sure the parent allows height */
-    text-align: center;
-  }
-  .blood-finding-section{
-    padding: 20px 0px 20px 0px;
   }
   .blood-description {
     font-size: 1.5rem;
-    font-family: var(--font-family);
-    font-optical-sizing: auto;
-    color: #777;
+    color: #5A6C84;
     margin-top: 15px;
     text-align: center;
   }
 
   .finding {
     display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .finding-content {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 0.5rem;
-    transition: all 0.3s ease;
+    margin-bottom: 30px;
   }
-  
-  .finding-content img {
-    max-width: 100%;
-    border-radius: 10px;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .finding-content:hover img {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px var(--primary-color);
-  }
-  
-  .finding-content h6 {
-    margin-top: 10px;
-    font-weight: 200;
-    color: #444;
-    font-family: var(--font-family);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  }
-  
- 
-
 
   .finding img {
     width: 70px;
@@ -97,25 +52,9 @@ h4.bottom-para {
 
   .finding h6 {
     margin: 0;
-    font-weight: 100;
+    font-weight: 600;
   }
 
   .finding small {
     color: #888;
   }
-
-  .read-more-button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 8px 20px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .read-more-button:hover {
-    background-color: #0056b3;
-  }
-  

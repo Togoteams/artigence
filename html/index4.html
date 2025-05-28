@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+        }
+
+        .sidebar {
+            height: calc(100vh - 40px);
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .task-button {
+            display: flex;
+            align-items: center;
+            color: white;
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .task-button:hover {
+            transform: translateX(10px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .task-button i {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        #form-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            height: calc(100vh - 40px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-content {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .form-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .form-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .form-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .form-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .file-upload-group {
+            margin-bottom: 15px;
+        }
+
+        .file-upload-group input[type="file"] {
+            display: none;
+        }
+
+        .file-upload-group label {
+            display: block;
+            padding: 10px 20px;
+            background: #2196F3;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-align: center;
+        }
+
+        .file-upload-group label:hover {
+            background: #1976D2;
+        }
+
+        .submit-btn {
+            padding: 10px 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        /* Banner Styles */
+        .banner-container {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            color: white;
+        }
+
+        .banner-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .banner-subtitle {
+            font-size: 1rem;
+            font-weight: 400;
+            max-width: 70%;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .banner-badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        /* File preview styles */
+        .file-preview-container {
+            margin-top: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #f8f9fa;
+        }
+        
+        .file-preview-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .file-preview-item:last-child {
+            border-bottom: none;
+        }
+        
+        .file-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .file-icon {
+            margin-right: 10px;
+            color: #6c757d;
+        }
+        
+        .file-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .file-action-btn {
+            background: none;
+            border: none;
+            color: #6c757d;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .file-action-btn:hover {
+            color: #0d6efd;
+        }
+        
+        /* Custom alert styles */
+        .custom-alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            min-width: 300px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background-color: #28a745;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transform: translateX(150%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .custom-alert.show {
+            transform: translateX(0);
+        }
+        
+        .alert-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-layout">
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+        <div class="d-flex flex-column">
+            <div class="task-button bg-warning" onclick="showForm('Megaphone')">
+                <i class="bi bi-megaphone-fill"></i><span>Megaphone</span>
+            </div>
+            <div class="task-button bg-primary" onclick="showForm('Piano Stand')">
+                <i class="bi bi-keyboard"></i><span>Piano Stand</span>
+            </div>
+            <div class="task-button bg-danger" onclick="showForm('Piano Bench')">
+                <i class="bi bi-box"></i><span>Piano Bench</span>
+            </div>
+            <div class="task-button bg-info" onclick="showForm('Audio Mixer')">
+                <i class="bi bi-sliders"></i><span>Audio Mixer</span>
+            </div>
+            <div class="task-button" style="background-color:#9b59b6;" onclick="showForm('Drum Mic')">
+                <i class="bi bi-mic-fill"></i><span>Drum Mic</span>
+            </div>
+            <div class="task-button bg-success" onclick="showForm('Drum Stool')">
+                <i class="bi bi-emoji-smile"></i><span>Drum Stool</span>
+            </div>
+            <div class="task-button bg-dark" onclick="showForm('Mic Stand')">
+                <i class="bi bi-mic"></i><span>Mic Stand</span>
+            </div>
+            <div class="task-button" style="background-color:#e67e22;" onclick="showForm('Replacement')">
+                <i class="bi bi-speaker-fill"></i><span>Replacement</span>
+            </div>
+            <div class="task-button" style="background-color:#8e44ad;" onclick="showForm('Mic Mic')">
+                <i class="bi bi-mic"></i><span>Mic Mic</span>
+            </div>
+            <div class="task-button" style="background-color:#16a085;" onclick="showForm('Speaker Stand')">
+                <i class="bi bi-bar-chart-steps"></i><span>Speaker Stand</span>
+            </div>
+            <div class="task-button" style="background-color:#2c3e50;" onclick="showForm('Bluetooth')">
+                <i class="bi bi-bluetooth"></i><span>Bluetooth</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Center Form -->
+    <div id="form-container">
+        <!-- Banner Container -->
+        <div class="banner-container">
+            <!-- <img id="banner-image" class="banner-image" src="" alt="Banner"> -->
+            <div class="banner-overlay">
+                <h2 class="banner-title" id="banner-title">Welcome to Dashboard</h2>
+                <p class="banner-subtitle" id="banner-subtitle">Upload your documents for the selected service</p>
+                <span class="banner-badge" id="banner-badge">Active</span>
+            </div>
+        </div>
+        
+        <div class="form-content">
+            <h5 id="form-title" class="mb-4">Upload Files</h5>
+            <form onsubmit="handleSubmit(event)">
+                <div class="mb-3">
+                    <label class="form-label">Website Name</label>
+                    <input type="text" id="website-name" class="form-control" readonly>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">User Name</label>
+                    <input type="text" class="form-control" value="demo_user" readonly>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" value="password123" readonly>
+                </div>
+
+                <div class="file-upload-group">
+                    <input type="file" id="file-upload" accept=".docx" onchange="handleFileSelect()" multiple>
+                    <label for="file-upload">Choose DOCX File(s)</label>
+                </div>
+
+                <div id="file-preview-container" class="file-preview-container mt-3">
+                    <h6 class="mb-3">Selected Files</h6>
+                    <div id="file-preview-list"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary submit-btn">Submit All Documents</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Alert -->
+<div id="custom-alert" class="custom-alert">
+    <span id="alert-message">Documents submitted successfully!</span>
+    <button class="alert-close" onclick="hideAlert()">&times;</button>
+</div>
+
+<script>
+    const bannerData = {
+        "Megaphone": {
+            title: "Megaphone Service",
+            subtitle: "Amplify your content with our megaphone upload service",
+            badge: "Popular"
+        },
+        "Piano Stand": {
+            title: "Piano Stand Service",
+            subtitle: "Support your musical content with our specialized service",
+            badge: "Featured"
+        },
+        "Piano Bench": {
+            title: "Piano Bench Service",
+            subtitle: "Comfortable solutions for your piano needs",
+            badge: "New"
+        },
+        "Audio Mixer": {
+            title: "Audio Mixer Service",
+            subtitle: "Blend your audio files perfectly with our tools",
+            badge: "Pro"
+        },
+        "Drum Mic": {
+            title: "Drum Mic Service",
+            subtitle: "Capture the perfect beat with our drum mic uploads",
+            badge: "Hot"
+        },
+        "Drum Stool": {
+            title: "Drum Stool Service",
+            subtitle: "Sit comfortably while managing your drum content",
+            badge: "Limited"
+        },
+        "Mic Stand": {
+            title: "Mic Stand Service",
+            subtitle: "Stand tall with our microphone support services",
+            badge: "Basic"
+        },
+        "Replacement": {
+            title: "Replacement Service",
+            subtitle: "Replace your old files with updated versions",
+            badge: "Essential"
+        },
+        "Mic Mic": {
+            title: "Mic Mic Service",
+            subtitle: "Double the microphone power for your uploads",
+            badge: "Premium"
+        },
+        "Speaker Stand": {
+            title: "Speaker Stand Service",
+            subtitle: "Elevate your audio content with our stand service",
+            badge: "Advanced"
+        },
+        "Bluetooth": {
+            title: "Bluetooth Service",
+            subtitle: "Wirelessly connect your content across devices",
+            badge: "Wireless"
+        }
+    };
+
+    let selectedFiles = [];
+
+    function showForm(websiteName) {
+        document.getElementById('website-name').value = websiteName;
+        document.getElementById('form-title').textContent = `Upload Files for ${websiteName}`;
+        
+        // Clear previous selections
+        document.getElementById('file-upload').value = '';
+        selectedFiles = [];
+        updateFilePreview();
+
+        // Update banner content
+        const bannerInfo = bannerData[websiteName];
+        const bannerImg = document.getElementById('banner-image');
+        if (bannerImg) bannerImg.style.opacity = 0;
+        
+        setTimeout(() => {
+            if (bannerImg) bannerImg.src = bannerInfo.image + '?auto=format&fit=crop&w=800&h=180';
+            document.getElementById('banner-title').textContent = bannerInfo.title;
+            document.getElementById('banner-subtitle').textContent = bannerInfo.subtitle;
+            document.getElementById('banner-badge').textContent = bannerInfo.badge;
+            if (bannerImg) bannerImg.style.opacity = 1;
+        }, 200);
+    }
+
+    function handleFileSelect() {
+        const fileInput = document.getElementById('file-upload');
+        if (fileInput.files.length > 0) {
+            // Convert FileList to array and add to selectedFiles
+            const newFiles = Array.from(fileInput.files);
+            selectedFiles = [...selectedFiles, ...newFiles];
+            
+            // Sort files by name in ascending order
+            selectedFiles.sort((a, b) => a.name.localeCompare(b.name));
+            
+            updateFilePreview();
+            // Reset the input to allow selecting more files
+            fileInput.value = '';
+        }
+    }
+
+    function updateFilePreview() {
+        const previewList = document.getElementById('file-preview-list');
+        previewList.innerHTML = '';
+        
+        if (selectedFiles.length === 0) {
+            return;
+        }
+        
+        selectedFiles.forEach((file, index) => {
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-preview-item';
+            fileItem.innerHTML = `
+                <div class="file-info">
+                    <i class="bi bi-file-earmark-word file-icon"></i>
+                    <span>${file.name}</span>
+                </div>
+                <div class="file-actions">
+                    <button class="file-action-btn" onclick="previewFile(${index})" title="Preview">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                    <button class="file-action-btn" onclick="removeFile(${index})" title="Remove">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            `;
+            previewList.appendChild(fileItem);
+        });
+    }
+
+    function previewFile(index) {
+        const file = selectedFiles[index];
+        if (file) {
+            alert(`Previewing file: ${file.name}\n\n(Note: This is a demo. In a real application, this would open a preview of the DOCX file.)`);
+        }
+    }
+
+    function removeFile(index) {
+        selectedFiles.splice(index, 1);
+        updateFilePreview();
+    }
+
+    function showAlert(message) {
+        const alert = document.getElementById('custom-alert');
+        document.getElementById('alert-message').textContent = message;
+        alert.classList.add('show');
+        
+        setTimeout(() => {
+            hideAlert();
+        }, 5000);
+    }
+
+    function hideAlert() {
+        document.getElementById('custom-alert').classList.remove('show');
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        
+        if(selectedFiles.length === 0) {
+            showAlert('Please upload at least one document!');
+            return;
+        }
+
+        console.log('Submitting files:', selectedFiles);
+        
+        // Show success message
+        const websiteName = document.getElementById('website-name').value;
+        showAlert(`Submitted ${selectedFiles.length} document(s) for ${websiteName} successfully!`);
+        
+        // Reset form
+        showForm(websiteName);
+    }
+
+    showForm('Megaphone');
+</script>
+
+</body>
+</html>
