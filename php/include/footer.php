@@ -8,10 +8,10 @@
           <div class="footer-links">
             <a href="product.php"> Products </a>
             <a href="career.php">Career</a>
-            <a href="#">News &amp; Media</a>
-            <a href="#">Research &amp; Publications</a>
+            <a href="news.php">News &amp; Media</a>
+            <a href="research.php">Research &amp; Publications</a>
             <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
+            <a href="contact.php">Contact Us</a>
           </div>
         </div>
         <div class="col-md-2"></div>

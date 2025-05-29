@@ -1034,7 +1034,11 @@ a.product_book_btn:hover {
     background: #FFFFFF0D;
     margin-right: 30px;
 }
-
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    .btn-contact {
+        margin-left: -26px !important;
+    }
+}
 .card h2 {
     font-family: Poppins;
     font-size: 20px;
@@ -1418,6 +1422,9 @@ p.text-muted {
     box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin-top: -20%;
+}
+section.connect-section.text-white.py-5 {
+    margin-top: -16%;
 }
 /*footer {*/
 /*    background-image: url(../images/f_bg.svg);*/
