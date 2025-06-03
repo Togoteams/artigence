@@ -21,6 +21,7 @@
     --white-color: #ffffff;
     --theme-font-color: #3498db;
     --font-size: 16px;
+    --font-color:#777;
   }
 
 
@@ -29,6 +30,12 @@ body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1280px;
+    }
 }
 .container-fuild{
     margin-left:200px !important;
@@ -67,7 +74,7 @@ ul {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 80vh; /* Adjust as needed */
+    height: 50vh; /* Adjust as needed */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1195,7 +1202,7 @@ section.page_not_found img {
         display: grid;
     }
     .our_partner .supported-by-text {
-    margin-left: -5%;
+        margin-left: -1%;
     }
     .scroll-container {
     margin-left: -12%;
@@ -1430,4 +1437,216 @@ section.connect-section.text-white.py-5 {
 /*    background-image: url(../images/f_bg.svg);*/
 /*    background-position: center !important;*/
 /*}*/
+
+
+
+
+}
+
+.c_section-title {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInDown 1s ease-out forwards;
+        }
+
+        .c_compliance-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            transform: translateY(30px);
+            background: linear-gradient(301deg, transparent, var(--primary-color));
+        }
+
+        .c_compliance-card.c_animate-in {
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        .c_compliance-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .c_card-header {
+            background: linear-gradient(301deg, transparent, var(--primary-color));
+            color: white;
+            border: none;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .c_card-header.c_applied {
+            background: linear-gradient(301deg, rgba(23, 121, 185, 0.3), var(--primary-color));
+        }
+
+        .c_card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.6s ease;
+        }
+
+        .c_compliance-card:hover .c_card-header::before {
+            transform: scale(1);
+        }
+
+        .c_card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .c_status-icon {
+            font-size: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        .c_compliance-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .c_compliance-item:last-child {
+            border-bottom: none;
+        }
+
+        .c_compliance-item:hover {
+            background: linear-gradient(301deg, rgba(255,255,255,0.1), rgba(23, 121, 185, 0.1));
+            transform: translateX(10px);
+        }
+.regulatory-section{
+      background: linear-gradient(301deg, transparent, var(--primary-color));
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--font-color);
+}
+        .c_compliance-logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .c_hipaa-logo {
+            background: linear-gradient(301deg, transparent, var(--primary-color));
+        }
+
+        .c_cdsco-logo {
+            background: linear-gradient(301deg, rgba(23, 121, 185, 0.3), var(--primary-color));
+        }
+
+        .c_iso-logo {
+            background: linear-gradient(301deg, rgba(23, 121, 185, 0.5), var(--primary-color));
+        }
+
+        .c_compliance-text {
+            flex: 1;
+        }
+
+        .c_compliance-name {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .c_compliance-desc {
+            color: #fff;;
+            font-size: 0.9rem;
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        .c_progress-indicator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(301deg, transparent, var(--primary-color));
+            transition: width 0.8s ease;
+            width: 0;
+        }
+
+        .c_compliance-item:hover .c_progress-indicator {
+            width: 100%;
+        }
+
+        @keyframes fadeInDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+       
+
+        @media (max-width: 768px) {
+            .c_compliance-card {
+                margin-bottom: 2rem;
+            }
+        }
+        .card-custom {
+    /* background: linear-gradient(to right, #007bcd, #eaf6ff); */
+    background: linear-gradient(to right, white 0%, hsla(210, 100%, 79%, 0.527) 40%, white 100%);
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.connect-heading {
+  /* font-family: 'Ubuntu', sans-serif; */
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.connect-heading .text-blend {
+/* font-family: 'IBM Plex Mono'; */
+    font-style: normal;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 68px;
+    background-image: linear-gradient(95deg, #fff 30%, var(--primary-color) 70%);
+    -webkit-background-clip: text;
+    /*color: transparent;*/
+    color:#1779b9;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px var(--primary-color);
+    border: none;
 }

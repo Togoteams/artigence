@@ -107,7 +107,20 @@
     width: 364px;
     text-align: left;
   }
+.connect-subtext {
+  font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 40.2px;
+    text-align: center;
+    margin: 4px auto;
+    height: 150px;
+    max-width: 100%;
 
+
+
+        color: #777;
+}
   .info-card p {
    font-family: 'Ubuntu', sans-serif;
     margin-bottom: 0;
@@ -215,6 +228,92 @@
   </div>
 </div>
 </section>
+
+<section class="connect-section text-white">
+  <div class="container">
+    <div class="card-custom px-3 py-3 text-center">
+     
+      <p class="fw-semibold connect-subtext mb-0">
+       Artigence Copilot transforms the pathologist’s experience. Artigence Copilot is a plug-and-play digital microscopy platform that modernizes routine microscopy analysis and report generation using cutting-edge AI — all without overhauling your existing lab setup.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="regulatory-section">
+    <div class="container">
+        <h1 class="c_section-title">
+            <i class="fas fa-shield-alt me-3"></i>
+            Regulatory Compliance
+        </h1>
+        
+        <div class="row g-4">
+            <!-- Compliant With Section -->
+            <div class="col-lg-6">
+                <div class="c_compliance-card" data-delay="0.2">
+                    <div class="c_card-header">
+                        <h3 class="c_card-title">
+                            <i class="fas fa-check-circle c_status-icon"></i>
+                            Compliant With
+                        </h3>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="c_compliance-item">
+                            <div class="d-flex align-items-center">
+                                <div class="c_compliance-logo c_hipaa-logo">
+                                    HIPAA
+                                </div>
+                                <div class="c_compliance-text">
+                                    <div class="c_compliance-name">HIPAA Compliance</div>
+                                    <p class="c_compliance-desc">Health Insurance Portability and Accountability Act - Ensuring patient data privacy and security</p>
+                                </div>
+                            </div>
+                            <div class="c_progress-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applied For Section -->
+            <div class="col-lg-6">
+                <div class="card c_compliance-card" data-delay="0.4">
+                    <div class="c_card-header c_applied">
+                        <h3 class="c_card-title">
+                            <i class="fas fa-hourglass-half c_status-icon"></i>
+                            Applied For
+                        </h3>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="c_compliance-item">
+                            <div class="d-flex align-items-center">
+                                <div class="c_compliance-logo c_cdsco-logo">
+                                    CDSCO
+                                </div>
+                                <div class="c_compliance-text">
+                                    <div class="c_compliance-name">CDSCO Approval</div>
+                                    <p class="c_compliance-desc">Central Drugs Standard Control Organization - Indian regulatory authority for pharmaceuticals</p>
+                                </div>
+                            </div>
+                            <div class="c_progress-indicator"></div>
+                        </div>
+                        
+                        <div class="c_compliance-item">
+                            <div class="d-flex align-items-center">
+                                <div class="c_compliance-logo c_iso-logo">
+                                    ISO
+                                </div>
+                                <div class="c_compliance-text">
+                                    <div class="c_compliance-name">ISO Certification</div>
+                                    <p class="c_compliance-desc">International Organization for Standardization - Quality management systems certification</p>
+                                </div>
+                            </div>
+                            <div class="c_progress-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <div class="container my-5" id="videoSection">
   <div class="ratio ratio-16x9">
     <video id="myVideo" muted poster="./images/videoimagebg.svg" controls>
@@ -223,6 +322,7 @@
     </video>
   </div>
 </div>
+
 
    <section class="our_partner">
       <div class="container">
@@ -263,11 +363,49 @@
       </div>
    </section>
 
+   <section class="our_partner">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-2 supported-by-text ">
+               Collaborated With
+            </div>
+            <div class="col-md-10">
+               <div class="scroll-container">
+                  <div class="logo-grid" id="logoGrid">
+                     <div class="logo-item">
+                        <img src="images/supported-by/iiit-cie.png" alt="iiit cie">
+                     </div>
+                     <div class="logo-item">
+                        <img src="images/supported-by/startup-india.webp" alt="startupindia">
+                     </div>
+                     <div class="logo-item">
+                        <img src="images/supported-by/sisfs-web.jpg" alt="SEED FUND SCHEME">
+                     </div>
+                     <div class="logo-item">
+                        <img src="images/supported-by/prymbjh4.png" alt="MAZUMDAR SHAW MEDICAL FOUNDATION ">
+                     </div>
+                     <div class="logo-item">
+                        <img src="images/supported-by/dst-nidhi.jpg" alt="DST nidhi">
+                     </div>
+                     <div class="logo-item">
+                        <img src="images/supported-by/nidhi-prayas.jpg" alt="nidhi-prayas">
+                     </div>
+                     <div class="logo-item">
+                        <img src="images/supported-by/c-camp.png" alt="C Camp">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+      </div>
+   </section>
 <section class="get_in_touch py-5" style="background: linear-gradient(to right, white 0%, hsla(210, 100%, 79%, 0.527) 40%, white 100%);">
   <div class="container">  
     <div class="row align-items-center text-center text-md-start">
       <div class="col-12 col-md-8 mb-3 mb-md-0">
-        <h2 style="font-family: 'Ubuntu', sans-serif !important; color: #777777;">Want to know more about Artigence Healthcare</h2>
+        <h2 style="font-family: 'Ubuntu', sans-serif !important; color: #777777;">Ready to experience the future of pathology?</h2>
         <h2></h2>
       </div>
       <div class="col-12 col-md-4 text-center text-md-end">
@@ -312,7 +450,7 @@
     <div class="row mt-4 thin-strip">
       <div class="col-md-4"></div>
       <div class="col-md-4 text-center">
-        <p class="mt-3 mb-2 text-muted">All Content Copyright 2025 |
+        <p class="mt-3 mb-2 text-muted"> |
           <a href="privacy-policy.html" class="text-dark text-decoration-none">Privacy Policy</a> |
           <a href="terms.html" class="text-dark text-decoration-none">Terms of Use</a>
         </p>
@@ -401,6 +539,36 @@
       });
 
    </script>
+   <script>
+        // Animate cards on page load
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.c_compliance-card');
+            
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('c_animate-in');
+                }, index * 200);
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('c_animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.c_compliance-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
 
 </html>
