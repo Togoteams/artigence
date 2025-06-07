@@ -3,42 +3,21 @@
 
 <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="css/stellarnav.min.css" type="text/css">
-  <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="css/responsive.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet">
+  <?php include 'include/header.php' ?>
+
   <title>Artigence|Product</title>
   <style>
-    body {
-      font-family: 'Ubuntu', sans-serif;
-      /* color: #555; */
-    }
-
     .navbar-custom {
       padding: 15px 40px;
     }
 
     .nav-link {
-      color: #5a5a5a !important;
+      color: #777 !important;
       font-weight: 400;
       margin-right: 25px;
     }
 
-    .nav-link.active {
-      color: #005377 !important;
-    }
+
 
     h5.art {
       font-size: 22px !important;
@@ -53,7 +32,7 @@
       background-color: #0079ca;
       color: #ffffff;
       font-size: 1rem;
-      cursor: povar(--font-family);
+      cursor: var(--font-family);
       border-radius: 30px;
       transition: all 0.4s ease;
       outline: none;
@@ -62,9 +41,7 @@
       font-weight: bold;
     }
 
-    .logo-img {
-      height: 60px;
-    }
+
 
     .navbar-toggler {
       border: none;
@@ -80,7 +57,7 @@
     }
 
     .info-card {
-      font-family: 'Ubuntu', sans-serif;
+      font-family: var(--font-family);
       /* background: linear-gradient(to right, #0082d5, #ffffff); */
       background-color: #0082d5;
       color: white;
@@ -91,7 +68,7 @@
     }
 
     h1.lab {
-      font-family: 'Ubuntu', sans-serif !important;
+      font-family: var(--font-family);
       font-size: 86px;
       font-weight: 800;
       text-align: center;
@@ -99,7 +76,7 @@
     }
 
     h4.subtitle.ti {
-      font-family: 'Ubuntu', sans-serif !important;
+      font-family: var(--font-family);
       font-size: 40px !important;
       font-weight: 700;
       text-align: center;
@@ -112,7 +89,7 @@
     }
 
     .info-card h5 {
-      font-family: 'Ubuntu', sans-serif;
+      font-family: var(--font-family);
       font-size: 22px;
       font-weight: 500;
       line-height: 42px;
@@ -122,7 +99,7 @@
     }
 
     .info-card p {
-      font-family: 'Ubuntu', sans-serif;
+      font-family: var(--font-family);
       margin-bottom: 0;
       font-size: 18px;
       font-weight: 400;
@@ -175,7 +152,7 @@
     .blood-title {
       font-size: 2.5rem;
       font-weight: 500;
-      font-family: 'Ubuntu', sans-serif;
+      font-family: var(--font-family);
       text-transform: uppercase;
       text-align: center;
       color: rgb(0, 121, 202);
@@ -183,7 +160,7 @@
 
     .blood-description {
       font-size: 1.5rem;
-      font-family: 'Ubuntu', sans-serif;
+      font-family: var(--font-family);
       font-optical-sizing: auto;
       color: #777;
       margin-top: 15px;
@@ -195,7 +172,7 @@
       color: #777;
       font-weight: 600;
       display: flex;
-      font-family: 'Ubuntu', sans-serif;
+      font-family: var(--font-family);
       align-items: center;
       margin-left: 25%;
       height: 100%;
@@ -253,7 +230,7 @@
     }
 
     p.mb-0.text-white-50 {
-      font-family: 'Ubuntu', sans-serif;
+      font-family: var(--font-family);
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
@@ -263,7 +240,7 @@
 
     /* blood sample */
     h5.fw-bold.ru {
-      font-family: 'Ubuntu', sans-serif;
+      font-family: var(--font-family);
       font-size: 24px;
       font-weight: 500;
       color: rgb(255, 255, 255);
@@ -278,6 +255,49 @@
       gap: 12px;
       padding: 0.5rem;
       transition: all 0.3s ease;
+    }
+
+    .faq-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .accordion-header {
+      background: #1779b9;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      /*background: linear-gradient(278.94deg, #d4f5d6 -4.61%, #d3e9f0 105.09%);*/
+    }
+
+    .faq-toggle {
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      color: #ffffff;
+    }
+
+    .faq-item .accordion-header.collapsed .faq-toggle {
+      content: "+";
+    }
+
+    .faq-item .accordion-header:not(.collapsed) .faq-toggle {
+      content: "×";
+      transform: rotate(0deg);
+    }
+
+    .faq-item .collapse {
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .text-danger {
+      color: #ff4444 !important;
     }
 
     /* Mobile: keep two findings in a row */
@@ -317,7 +337,7 @@
       .blood-title {
         color: rgb(0, 121, 202);
         text-align: middle !important;
-        font-family: 'Ubuntu', sans-serif;
+        font-family: var(--font-family);
         font-weight: 700px;
 
       }
@@ -332,7 +352,7 @@
 
       .blood-description {
         font-size: 16px;
-        font-family: 'Ubuntu', sans-serif;
+        font-family: var(--font-family);
         font-optical-sizing: auto;
         color: #777;
         margin-top: 15px;
@@ -345,14 +365,14 @@
 
 <body>
   <!-- Responsive Navbar -->
-<?php include 'include/navbar.php' ?>
+  <?php include 'include/navbar.php' ?>
   <section class="hero_sec_1">
     <div class="container hero-content">
-      <h1 class="lab">
+      <h1 class="lab" style="font-family: var(--font-family);">
         Empower Your Lab
       </h1>
       <div>
-        <h4 class="subtitle ti">One Device, Infinite Microscopy Possibilities </h4>
+        <h4 class="subtitle ti" style="font-family: var(--font-family);">One Device, Infinite Microscopy Possibilities </h4>
       </div>
       <!-- <a href="">CONTACT US</a> -->
     </div>
@@ -364,9 +384,9 @@
           <!-- Left Column: Buttons -->
           <div class="col-md-3 mt-4 mb-md-0 d-flex flex-md-column flex-row">
             <button id="bloodBtn" class="gradient-btn active mb-4 mb-md-4 me-2 me-md-0"
-              onclick="changeImage('blood', this)">BLOOD</button>
-            <button class="gradient-btn mb-4 mb-md-4 me-2 me-md-0" onclick="changeImage('urine', this)">URINE</button>
-            <button class="gradient-btn mb-4 mb-md-0" onclick="changeImage('semen', this)">SEMEN</button>
+              onclick="changeImage('blood', this)" style="font-family: var(--font-family);">BLOOD</button>
+            <button class="gradient-btn mb-4 mb-md-4 me-2 me-md-0" onclick="changeImage('urine', this)" style="font-family: var(--font-family);">URINE</button>
+            <button class="gradient-btn mb-4 mb-md-0" onclick="changeImage('semen', this)" style="font-family: var(--font-family);">SEMEN</button>
           </div>
 
           <!-- Right Column: Image + Read More -->
@@ -386,8 +406,8 @@
       <div class="row align-items-center">
         <!-- Left Section -->
         <div class="col-lg-12 col-md-12 col-sm-12">
-          <h2 class="blood-title"><span class="blood-title-span">Blood Analysis</span></h2>
-          <p class="blood-description">
+          <h2 class="blood-title"><span class="blood-title-span" style="font-family: var(--font-family);">Blood Analysis</span></h2>
+          <p class="blood-description" style="font-family: var(--font-family);">
             Analyse the Peripheral Blood Smear with cutting-edge AI technology and make the diagnosis easier
             and faster
           </p>
@@ -397,7 +417,7 @@
           <div class="blood-finding-section">
             <div class="row">
               <div class="col-md-4 col-lg-4 col-sm-12">
-                <h3 class="blood-finding-section-text"> Blood Findings</h3>
+                <h3 class="blood-finding-section-text" style="font-family: var(--font-family);"> Blood Findings</h3>
               </div>
               <div class="col-md-8 col-lg-8 col-sm-12">
                 <div class="row">
@@ -406,7 +426,7 @@
                     <div class="col-6 col-md-12 finding">
                       <div class="finding-content">
                         <img src="images/product/blood/malaria.png" alt="Malaria">
-                        <h6>Malaria</h6>
+                        <h6 style="font-family: var(--font-family);">Malaria</h6>
                       </div>
                     </div>
                     <div class="col-6 col-md-12 finding">
@@ -631,8 +651,134 @@
     </div>
   </section>
 
+  <!-- FAQ Section -->
+  <section class="py-5" style="background: linear-gradient(to right, white 0%, hsla(210, 100%, 79%, 0.527) 40%, white 100%);">
+    <div class="container">
+      <!--<h2 class="text-center mb-5" style="font-family: var(--font-family); font-size: 32px; font-weight: 500; line-height: 48px; color: rgb(0, 121, 202);">-->
+      <!--  Frequently Asked Questions-->
+      <!--</h2>-->
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="faqAccordion">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item mb-3">
+              <div class="d-flex justify-content-between align-items-center p-3 accordion-header"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq1"
+                aria-expanded="false"
+                aria-controls="faq1">
+                <h5 class="mb-0" style="font-family: var(--font-family); font-weight: 400;">
+                  Product Specifications
+                </h5>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div id="faq1" class="collapse p-3 bg-white" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div style="font-family: var(--font-family); color: #555; line-height: 1.6; font-size: 16px;">
+                  <p style="margin-bottom: 12px;"><strong>Components:</strong></p>
+                  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 12px;">
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span> Camera Unit
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span> Computing Unit
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span> Casing
+                    </li>
+                  </ul>
+                </div>
+                <div style="font-family: var(--font-family); color: #555; line-height: 1.6; font-size: 16px;">
+                  <p style="margin-bottom: 12px;"><strong>Computing:</strong></p>
+                  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 12px;">
+                    <li style="margin-bottom: 6px; position: relative;">
+                      Processor
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span>Quad-core 64-bit Arm Cortex -A76 CPU, running at 2.4GHz
+
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative;">
+                      Memory (RAM)
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span>LPDDR4X-4267 8GB SDRAM
+
+                    </li>
+                  </ul>
+                </div>
+                <div style="font-family: var(--font-family); color: #555; line-height: 1.6; font-size: 16px;">
+                  <p style="margin-bottom: 12px;"><strong>Camera:</strong></p>
+                  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 12px;">
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span>Resolution: 12.3 megapixels
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span>Sensor Size: 7.9 mm diagonal
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span>Pixel Size: 1.55 um x 1.55 pm
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span>0.5x Reduction Lens Adapter: Specific to Microscope Brand
+                    </li>
+                  </ul>
+                </div>
+                <div style="font-family: var(--font-family); color: #555; line-height: 1.6; font-size: 16px;">
+                  <p style="margin-bottom: 12px;"><strong>External Interface :</strong></p>
+                  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 12px;">
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span>4 x USB Type-A ports
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span>1 x Gigabit Ethernet (RJ45) port
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span>2 x Micro HDMI ports
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span>1 x USB-C power input port (5V/5A)
+                    </li>
+                  </ul>
+                </div>
+                <div style="font-family: var(--font-family); color: #555; line-height: 1.6; font-size: 16px;">
+                  <p style="margin-bottom: 12px;"><strong>Electrical Specification :</strong></p>
+                  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 12px;">
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span> Camera Unit
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span> Computing Unit
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span> Casing
+                    </li>
+                  </ul>
+                </div>
+                <div style="font-family: var(--font-family); color: #555; line-height: 1.6; font-size: 16px;">
+                  <p style="margin-bottom: 12px;"><strong>External Interface :</strong></p>
+                  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 12px;">
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span>Input Voltage: 100-240V AC, 50-60Hz
+                    </li>
+                    <li style="margin-bottom: 6px; position: relative; padding-left: 20px;">
+                      <span style="position: absolute; left: 0; color: #0079ca;">•</span>Power Delivery Profiles: 5V/5A, 9V/3A, 12V/2.25A, 15V/1.8A (maximum 27W)
+                    </li>
+
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
-<?php include 'include/footer.php' ?>
+  <?php include 'include/footer.php' ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="js/jquery-3.6.0.min.js"></script>
@@ -755,7 +901,29 @@
       document.getElementById('bloodBtn').click();
     });
   </script>
+  <script>
+    // This script handles the FAQ toggle icons and accordion behavior
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.accordion-header');
 
+      faqItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const toggleIcon = this.querySelector('.faq-toggle');
+          const isCollapsed = this.classList.contains('collapsed');
+
+          // Update all icons to plus first
+          document.querySelectorAll('.faq-toggle').forEach(icon => {
+            icon.textContent = '+';
+          });
+
+          // If this item is being opened, change its icon to X
+          if (!isCollapsed) {
+            toggleIcon.textContent = '×';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

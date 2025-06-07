@@ -1,36 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <?php include 'include/header.php' ?>
+
   <title>Artigence | Career</title>
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-
-
-  <!-- Custom Styles & Fonts -->
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="css/stellarnav.min.css" type="text/css">
-  <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="css/responsive.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet"> 
 
   <style>
-@font-face {
-    font-family: 'Graphik-bold';
-    src: url('./fonts/Graphik-Bold.woff2') format('woff2'),
-        url('./fonts/Graphik-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
+
  body {
       background-color: #f8f9fa; /* very light gray */
-     font-family: 'Ubuntu', sans-serif;
+     font-family: var(--font-family);
       color: #555;
     }
     h2 {
@@ -57,6 +36,20 @@
       font-weight: 500;
       color: #555;
     }
+    .nav-link.active {
+    color: #005377 !important;
+    position: relative;
+  }
+  
+  .nav-link.active::after {
+    /*content: '';*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*bottom: -5px; */
+    /*width: 100%;*/
+    /*height: 2px;*/
+    /*background-color: #007bff; */
+  }
     .btn-custom {
       background-color: #007bff;
       color: white;
@@ -93,9 +86,7 @@
       border-radius: 30px;
       padding: 8px 25px;
     }
-    .logo-img {
-      height: 60px;
-    }
+   
     .navbar-toggler {
       border: none;
     }
@@ -124,8 +115,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 m-3">
-        <h1 style="font-size: 39px; color:rgb(0, 121, 202); text-align: center; font-weight: 600;letter-spacing: 1px;    margin-top: 30px;
-">
+        <h1 style="font-size: 39px; color:rgb(0, 121, 202); text-align: center; font-weight: 600;letter-spacing: 1px;    margin-top: 30px;">
           Join Artigence Healthcare
         </h1>
       </div>
@@ -133,7 +123,7 @@
     <div class="row">
       <div class="col-md-12">
         <p class="intro-text mt-3 mb-4 text-center" style="
-            font-family: 'Ubuntu', sans-serif;
+            font-family: var(--font-family);
             font-size: 36px;
             font-weight: 600;
             line-height: 50px;
@@ -148,7 +138,7 @@
     </div>
     <div class="row justify-content-center mb-5" style="margin-top: 40px;">
       <div class="col-md-12">
-        <div class="job-box text-center" style="font-family: 'Ubuntu', sans-serif;background-color: #fff;border-radius: 10px;
+        <div class="job-box text-center" style="font-family: var(--font-family);background-color: #fff;border-radius: 10px;
             padding: 40px 30px;box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
           <h4 style="font-size: 36px; font-weight: 700; line-height: 30px; color: #777; text-align: center;">
             Current Job Openings

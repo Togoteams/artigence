@@ -1,7 +1,10 @@
+<?php
+$current = basename($_SERVER['PHP_SELF']);
+?>
 <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-custom">
     <div class="container">
       <a class="navbar-brand" href="index.php">
-        <img src="images/logo-symbol.svg" alt="Logo" class="logo-img">
+        <img src="images/logo.svg" alt="Logo" class="logo-img">
       </a>
 
       <!-- Hamburger Button -->
@@ -13,18 +16,17 @@
       <!-- Navbar Links -->
       <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
         <ul class="navbar-nav align-items-lg-center">
-          <li class="nav-item">
-            <a class="nav-link" href="product.php">PRODUCTS</a>
+            <li class="nav-item">
+            <a class="nav-link <?php if($current=='index.php') echo 'active'; ?>" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="research.php">RESEARCH</a>
+            <a class="nav-link <?php if($current=='product.php') echo 'active'; ?>" href="product.php">Products</a>
           </li>
+      
           <li class="nav-item">
-            <a class="nav-link" href="career.php">CAREER</a>
+            <a class="nav-link <?php if($current=='career.php') echo 'active'; ?>" href="career.php">Career</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="news.php">NEWS</a>
-          </li>
+     
           <li class="nav-item ms-lg-3">
             <a class="btn btn-contact" href="contact.php">Contact us</a>
           </li>

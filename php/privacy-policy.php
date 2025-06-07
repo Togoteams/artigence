@@ -21,7 +21,7 @@
 
   <style>
      body {
-     font-family: 'Ubuntu', sans-serif;
+     font-family: var(--font-family);
       /* color: #555; */
     }
     .navbar-custom {
@@ -88,7 +88,7 @@
 }
 
 .connect-heading {
-  /* font-family: 'Ubuntu', sans-serif; */
+  /* font-family: var(--font-family); */
   font-size: 2rem;
   font-weight: 700;
 }
@@ -106,7 +106,7 @@
 }
 
 .connect-subtext {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: var(--font-family);
     font-size: 20px;
     font-weight: 500;
     line-height: 24.2px;
@@ -135,7 +135,7 @@
         margin-top: 0px;
     }
     .reach_us>h2 {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
     font-size: 52px;
     font-weight: 600;
     line-height: 62.93px;
@@ -157,7 +157,7 @@
     align-items: center;
     gap: 8px;
     color: #777;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
     font-size: 20px;
     font-weight: 500;
     line-height: 24.2px;
@@ -167,7 +167,7 @@
 }
 
 .reach_us_list h3 {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
     font-size: 20px;
     font-weight: 600;
     line-height: 24.2px;
@@ -177,7 +177,7 @@
 }
 
 .reach_us_list p {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 400;
     line-height: 19.36px;
@@ -188,7 +188,7 @@
 
 
 .reach_us_list a {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 500;
     line-height: 21.78px;
@@ -249,7 +249,7 @@
     margin-top: -27px;
 }
 p.mb-3.solo {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -289,7 +289,7 @@ p.mb-3.solo {
   }
    .terms-section {
     background-color: #f8f9fa;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
   }
   
   .terms-content {

@@ -20,7 +20,7 @@
 
   <style>
      body {
-     font-family: 'Ubuntu', sans-serif;
+     font-family: var(--font-family);
       /* color: #555; */
     }
     .navbar-custom {

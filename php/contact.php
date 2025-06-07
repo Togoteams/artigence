@@ -1,27 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Artigence | Contact Us</title>
   
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Custom Styles & Fonts -->
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="css/stellarnav.min.css" type="text/css">
-  <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="css/responsive.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet"> 
+   <?php include 'include/header.php' ?>
+
 
   <style>
      body {
-     font-family: 'Ubuntu', sans-serif;
+     font-family: "Noto Sans", sans-serif !important;
       /* color: #555; */
     }
     .navbar-custom {
@@ -55,9 +43,7 @@
     overflow: hidden;
     font-weight: bold;
     }
-    .logo-img {
-      height: 60px;
-    }
+
     .navbar-toggler {
       border: none;
     }
@@ -88,25 +74,21 @@
 }
 
 .connect-heading {
-  /* font-family: 'Ubuntu', sans-serif; */
   font-size: 2rem;
   font-weight: 700;
 }
 
 .connect-heading .text-blend {
-/* font-family: 'IBM Plex Mono'; */
     font-style: normal;
     font-weight: 600;
     font-size: 52px;
     line-height: 68px;
     background-image: linear-gradient(95deg, #fff 30%, var(--primary-color) 70%);
-    -webkit-background-clip: text;
-    /*color: transparent;*/
     color:#1779b9;
 }
 
 .connect-subtext {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: var(--font-family);
     font-size: 20px;
     font-weight: 500;
     line-height: 24.2px;
@@ -135,7 +117,7 @@
         margin-top: 0px;
     }
     .reach_us>h2 {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
     font-size: 52px;
     font-weight: 600;
     line-height: 62.93px;
@@ -157,7 +139,7 @@
     align-items: center;
     gap: 8px;
     color: #777;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
     font-size: 20px;
     font-weight: 500;
     line-height: 24.2px;
@@ -167,7 +149,7 @@
 }
 
 .reach_us_list h3 {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
     font-size: 20px;
     font-weight: 600;
     line-height: 24.2px;
@@ -177,7 +159,7 @@
 }
 
 .reach_us_list p {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 400;
     line-height: 19.36px;
@@ -188,7 +170,7 @@
 
 
 .reach_us_list a {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 500;
     line-height: 21.78px;
@@ -249,7 +231,7 @@
     margin-top: -27px;
 }
 p.mb-3.solo {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -359,10 +341,10 @@ p.mb-3.solo {
     <!-- Left Column -->
     <div class="col-md-6 mb-4 roi">
       <h2 class="contact-heading mb-2">REACH US</h2>
-      <p class="mb-3 solo">Email us at :contact@artigence.ai</p>
+      <p class="mb-3 solo">Email: contact@artigence.ai</p>
 
       <p class="contact-subheading">Registered Office</p>
-      <p class="contact-detail">Plot No. 14/1, Serial No. UGF 14, Shree Ganesh Chamber, Dhantoli,<br> Nagpur, Maharashtra - 440012 Ger Direction</p>
+      <p class="contact-detail">Plot No. 14/1, Serial No. UGF 14, Shree Ganesh Chamber, Dhantoli,<br> Nagpur, Maharashtra - 440012</p>
 
       <p class="contact-subheading mt-4">Operating Office</p>
       <p class="contact-detail">258/A, Hosur Rd, Bommasandra Industrial Area, Bengaluru, Bommasandra, Karnataka 560099</p>
@@ -375,7 +357,7 @@ p.mb-3.solo {
         <p class="mb-4" style="font-size: 16px;
     font-weight: 600;
     line-height: 24px;
-    color: #777;text-align: center;font-family: 'Ubuntu', sans-serif;">Want to know more about Artigence Healthcare</p>
+    color: #777;text-align: center;font-family: var(--font-family);">Want to know more about Artigence Healthcare</p>
 
         <form>
           <div class="row mb-3">
